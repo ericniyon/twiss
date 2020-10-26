@@ -28,6 +28,8 @@
   
   <link rel="stylesheet" href="{{asset('master/assets/scroll_progress.css')}}" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  @yield('styles')
   <!-- Flip card css-->
   <style>
 
@@ -106,7 +108,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">
                             Ahabanza</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo</a></li>
+                <li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('books.writtenBooks')}}">Ibitabo</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo by'amajwi</a>
                     </li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
                 
@@ -242,14 +244,14 @@ $("#audioPlayModal").on("hidden.bs.modal", function () {
   @livewireScripts
 
 
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
   var l=false;
 window.onbeforeunload = function() {
   if (!l) {
     return "you shouldn't leave";
   }
 }
-   </script>
+   </script>-->
      
   <input name="animation" type="hidden">
   </body>

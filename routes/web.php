@@ -47,7 +47,7 @@ Route::group([ 'prefix' => 'admin','middleware' => ['web']], function ()  {
 Route::group([ 'prefix' => 'books'], function ()  {
   
   
-    Route::get('/written-books',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('book.writtenBooks');
+    Route::get('/written-books',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('books.writtenBooks');
 
     Route::get('/audio-books',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('book.audioBooks');
     Route::get('/read/{book}',  [App\Http\Controllers\Books\BooksController::class ,'readBook'])->name('book.readBook');
