@@ -94,7 +94,7 @@ class QuizController extends Controller
    
   }
      
-      return view('quizes.test',['q'=>$q, 'bookID'=>$bookID ]);
+      return view('quizes.answers',['q'=>$q, 'bookID'=>$bookID ]);
         
    
         

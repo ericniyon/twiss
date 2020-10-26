@@ -240,7 +240,17 @@ $("#audioPlayModal").on("hidden.bs.modal", function () {
 
   </script>
   @livewireScripts
-  
+
+
+  <script type="text/javascript">
+  var l=false;
+window.onbeforeunload = function() {
+  if (!l) {
+    return "you shouldn't leave";
+  }
+}
+   </script>
+     
   <input name="animation" type="hidden">
   </body>
 </html>
