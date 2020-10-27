@@ -13,11 +13,21 @@ class Question extends Model
     
     
     protected $cascadeDeletes = ['question_options'];
+    protected $fillable = [ 'quiz_id', 'question_text' ];
     public function question_options()
     {
 
         
 
         return $this->HasMany('App\Models\QuestionOption');
+    }
+
+
+    public function quiz()
+    {
+
+        
+
+        return $this->belongsTo('App\Models\Quiz');
     }
 }

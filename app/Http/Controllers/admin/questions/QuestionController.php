@@ -11,6 +11,7 @@ use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\QuestionOption;
 use App\Models\BookType;
+use App\Http\Requests\QuestionPostRequest;
 
 use Illuminate\Support\Facades\Storage;
 Use Alert;
@@ -32,7 +33,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+        return view('admin.questions.index', compact('questions'));
     }
 
     /**
@@ -116,9 +118,9 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, Question $question)
     {
-        //
+        return view('admin.questions.show', compact('question'));
     }
 
     /**
@@ -127,21 +129,18 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+   
+    public function edit(Request $request, Question $question)
     {
-        //
+        return view('admin.questions.edit', compact('question'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(QuestionPostRequest $request, Question $question)
     {
-        //
+        $data = $request->validated();
+        $question->fill($data);
+        $question->save();
+        return redirect()->route('questions.index')->with('toast_success', 'Question updated!');
     }
 
     /**

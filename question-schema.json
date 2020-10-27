@@ -1,0 +1,34 @@
+{
+    "name":"Question",
+    "namespace":"App\\Models",
+    "complete_name":"App\\Models\\Question",
+    "table":{
+        "name":"questions",
+        "colums":[
+                    { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"question_text", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"quiz_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"question_options",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "question_id",
+            "model": {
+                "name":"QuestionOption",
+                "table":{
+                    "name":"question_options",
+                    "colums": [
+                                { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"question_text", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"quiz_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

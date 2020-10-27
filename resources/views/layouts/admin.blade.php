@@ -151,6 +151,8 @@ textarea.form-control.is-invalid {
 
 		gtag('config', 'UA-119386393-1');
 	</script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 <body>
 	<div class="pre-loader">
@@ -448,6 +450,17 @@ textarea.form-control.is-invalid {
 							<li><a href="{{route('quizes.index')}}">All Quizes</a></li>
 						</ul>
 					</li>
+
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Questions</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="{{route('questions.create')}}">Add Question</a></li>
+							<li><a href="{{route('questions.index')}}">All Questions</a></li>
+						</ul>
+					</li>
 				
 				
 
@@ -468,25 +481,18 @@ textarea.form-control.is-invalid {
 				<div class="page-header">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>blank</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">blank</li>
-								</ol>
-							</nav>
+							@yield('path')
 						</div>
 						
 					</div>
 				</div>
 				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+					@yield('content')
 				</div>
 			</div>
 
 
-            @yield('content')
+           
 			
 		</div>
 	</div>
@@ -549,7 +555,16 @@ textarea.form-control.is-invalid {
             });
 
         });
-    </script>
+	</script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.selectQuiz').select2();
+});
+
+</script>
+
 
 </body>
 </html>

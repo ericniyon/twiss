@@ -41,6 +41,8 @@ Route::group([ 'prefix' => 'admin','middleware' => ['web']], function ()  {
     
 });
 
+Route::resource('questionss', App\Http\Controllers\QuestionController::class);
+Route::resource('question-options', App\Http\Controllers\QuestionController::class);
 
 
 
