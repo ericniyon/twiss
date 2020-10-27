@@ -30,7 +30,9 @@ class Quiz extends Component
 public $question_id="";
 public $previous;
 public $question;
+public $score=0;
 public $count = 0;
+public $checkCorrect = false;
 
     public function mount($bookID)
 {
@@ -78,6 +80,8 @@ public function store()
 
     ]);
 
+    if(!$this->answer==""){
+
 
     $checkAnswer= Answer::where('user_id',1)
     ->where('quiz_id', $this->quizID() )
@@ -121,24 +125,31 @@ public function store()
     $this->increment();
 
     if(QuestionOption::find($this->answer)->correct){
-
-        session()->flash('message', 'Corrrect.'. $this->questionID .'count:'. $this->count);
+    $this->score++;
+       // session()->flash('message', 'Corrrect.'. $this->questionID .'count:'. $this->count);
     }
 
 
     
-else{
+$this->resetAnswer();
 
-
-    session()->flash('message', 'not true.'. $this->count);
 }
 
-    
+
+else{
+
+    session()->flash('message', 'Subiza ikibazo!');
+}
 
 
     
 
 
+}
+
+public function resetAnswer(){
+
+    $this->answer="";
 }
 
 public function  quizID(){
@@ -156,7 +167,7 @@ public function startAgain(){
 
 public function increment()
 {
-    if( $this->count != $this->countQuestions()-2 ){
+    if( $this->count != $this->countQuestions()-1 ){
     $this->count++;}
 
     else{
@@ -165,6 +176,11 @@ public function increment()
        
     }
 }
+
+
+
+
+
 
 
 public function countQuestions(){

@@ -1,135 +1,125 @@
-<div>
-    <section class="content4 cid-sdRFwSVnh8" id="content4-2j">
+<div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="card">
+     
+  @if($showAnswers)
 
-        <div class="card">
-            <div class="card-body">
-        @if (session()->has('message'))
-
-        <div class="alert alert-success">
-
-            {{ session('message') }}
-
-        </div>
-
-    @endif
-
-    
-
-    @error('answer') <span class="text-danger">{{ $message }}</span>@enderror
+  <a href="" class=" btn btn-primary">Subira ku bitabo</a>
+  @endif
 
 
+
+    @if(!$showAnswers && !$complited)<div  class=""><p style="font-size: 20px">{{$count+1}}.{{$question->question_text}} ?</p></div> @endif
+  <div class="card-body">
+
+
+    <!-- quiz complited-->
     @if($complited)
-    <button wire:click.prevent="startAgain" class="btn btn-success">Subiramo</button>
 
-    <button wire:click.prevent="showAnswers" class="btn btn-success">Show answers</button>
+  <div class="alert alert-primary"><h3>Amanota : {{$score}}/ {{$allQuestions}} </h3></div>
+    <button wire:click.prevent="startAgain" class="btn btn-primary"><i class='fas fa-angle-double-left'></i> Subiramo</button>
+
+    <button wire:click.prevent="showAnswers" class="btn btn-outline-primary">Ibisubizo <i class='fas fa-angle-double-right'></i></button>
+    <!-- end quiz complited-->
     @else
 
+    <!--answers -->
     @if($showAnswers)
- 
-@foreach($myAnswers as $key => $answer)
 
-<div>
+    @php
+    $countQuestions=0;
+    @endphp
+    @foreach($myAnswers as $key => $answer)
 
-@php
-
-$allAnswers=\App\Models\QuestionOption::where('question_id' , $answer->question->id)->get();
-$isCorrect=\App\Models\QuestionOption::where('question_id' , $answer->question->id)
-                                      ->where('correct',1)->get('id');
-@endphp
-<h4>{{$answer->question->question_text}}</h4>
-
-
-
-@foreach($allAnswers as $key => $a)
+    <div  class="row">
+    
+    @php
+   $countQuestions++;
+    $allAnswers=\App\Models\QuestionOption::where('question_id' , $answer->question->id)->get();
+    $isCorrect=\App\Models\QuestionOption::where('question_id' , $answer->question->id)
+                                          ->where('correct',1)->get('id');
+    @endphp
 
 
-    @if($a->id==$answer->question_option_id )
 
+<div  class=""><p style="font-size: 20px">{{$countQuestions}}. {{$answer->question->question_text}}</p></div>
+<div class="col-sm-10">
+@foreach($allAnswers as $key => $a)  
 
+@if($a->id==$answer->question_option_id )
 @if($a->correct)
-<div style="background: rgba(29, 197, 93, 0.048)" class="alert ">
-    <i class="material-icons" style="color:green">done</i><strong class="text-dark">{{$a->option}}</strong>
-</div>
-@else
-<div class="alert alert">
-    <i class="material-icons" style="color:red">clear</i><strong class="text-dark">{{$a->option}}</strong>
-</div>
-@endif
-
+  <div  class="form-check alert alert-success">
+    <input class="form-check-input" type="radio" name="{{$a->question->id}}" id="{{$a->id}}" value="option1" checked disabled>
+    <label class="form-check-label" for="{{$a->id}}">
+        {{$a->option}} <i class="fas fa-check text-success"></i>
+    </label>
+  </div>
 @else
 
-<div  @if($a->correct) style="background: rgba(29, 197, 93, 0.048)"  @endif class="alert ">
-    
-    @if($a->correct)
-    <i class="material-icons" style="color:green">done</i> <strong class="text-dark">{{$a->option}}</strong> 
-
-    @else
-    <strong class="text-dark">{{$a->option}}</strong> 
-    @endif
-    
-    </div> 
-
-    
+<div class="form-check alert ">
+<input class="form-check-input" type="radio" name="{{$a->question->id}}" id="{{$a->id}}" value="{{$a->id}}" checked disabled>
+    <label class="form-check-label" for="gridRadios2">
+        {{$a->option}} <i class="fas fa-times text-danger"></i>
+    </label>
+  </div>
 
 
-
-@endif
-   
-   
-@endforeach
+  @endif
 
 
-  
-@endforeach
-
-    @else
-
-
-        <form wire:submit.prevent="store">
-    
-       
-   {{$question->question_text}}
-        <div class="container">
-    
-            <input wire:model="questionID" value="{{$question->id}}" type="text">
-            @foreach ($question->question_options as $op)
+  @else
+  <div  class="form-check alert  @if($a->correct) alert-success @endif">
+    <input class="form-check-input" type="radio" name="{{$a->question->id}}" id="{{$a->id}}" value="option1" disabled>
+    <label class="form-check-label" for="{{$a->id}}">
+        {{$a->option}}  @if($a->correct) <i class="fas fa-check text-success"></i> @endif
+    </label>
+  </div>
 
 
+  @endif
 
-            <div class="alert-alert-light">
-              
-            
-            <input wire:model="answer" type="radio" id="{{$op->id}}" name="{{$op->question->id}}" value="{{$op->id}}">
-            <label class="texr-dark" for="{{$op->id}}">{{$op->option}}</label><br>
+
+ @endforeach
+</div>
+</div>
+  @endforeach
+ 
+    @else 
+
+    <!-- end answers-->
+      <!-- questions -->
+      
+          <div  class="row">
+             
+           
+            <div class="col-sm-10">
+              <div>
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
             </div>
-            
-            
-            
-                
-            
-            
-            @endforeach
-            <button  class="btn btn-success">Next question</button>
-    </div>
-</div>
-
-
-
-
+                @error('answer')  <span class="text-danger">Banza usubize ikibazo!</span>@enderror
+                <form >
     
-       
-    
+                    @foreach ($question->question_options as $op)
+              
+              <div style="margin-right:100px" class="form-check alert">
+                <input wire:model="answer" class="form-check-input" type="radio" id="{{$op->id}}" name="{{$op->question->id}}" value="{{$op->id}}">
+                <label class="form-check-label" for="{{$op->id}}">
+                    {{$op->option}}
+                </label>
+              </div>
+                 @endforeach
+             
+                 <button wire:click.prevent="store"  class="btn btn-outline-primary">Igikurikiyeho <i class='fas fa-angle-double-right'></i></button>
+            </form>
+            </div>
+          </div>
 
-
-
-  
-    
-    
-   
-<form>
-
-    @endif
-    @endif
-</div>
-    </section>
-</div>
+         
+          
+       <!-- end questions -->   
+       @endif
+       @endif 
+  </div>
+ </div>
