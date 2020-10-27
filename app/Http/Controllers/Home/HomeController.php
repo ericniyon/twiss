@@ -58,7 +58,7 @@ class HomeController extends Controller
         return redirect()->back()->with('success', "Murakoze ubutumwa bwanyu bwatugezeho!");
     }
 
-    function partener(){
+    function partner(){
 
 
         return view('home.partener');

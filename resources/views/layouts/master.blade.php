@@ -106,11 +106,11 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="/">
                             Ahabanza</a></li>
                 <li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('books.writtenBooks')}}">Ibitabo</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo by'amajwi</a>
-                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
+                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
                 
                 
             </div>

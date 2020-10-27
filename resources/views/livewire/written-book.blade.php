@@ -15,15 +15,13 @@
                         <img style="height: 400px" src="{{asset('storage/books/covers/'.$book->cover)}}">
                     </div>
                 </div>
-                <div  style="height:100%; background:rgb(147, 147, 206)" class="card back ">
-                    <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                    {{$book->description}}<br>
-                      </p>
-                        <p><center>
+                <div  style="height:100%; background:rgb(38, 220, 233)" class="card back ">
+                   
+                        <p style="margin-top:150px"><center>
                           @if ($book->book_type->name=="Written")
-                          <a class="btn btn-danger-outline display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Soma igitabo</a>
+                          <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Soma igitabo</a>
                          @else
-                         <a class="btn btn-danger-outline display-4" href="{{route('book.listenBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Umva igitabo</a>
+                         <a class="btn btn-danger display-4" href="{{route('book.listenBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Umva igitabo</a>
                           @endif
                        
                         </center></p>
