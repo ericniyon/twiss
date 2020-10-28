@@ -13,7 +13,7 @@
 
     <!-- quiz complited-->
     @if($complited)
-
+<div style="background: green" class="alert text-light">Urakoze! usoje ibazwa.</div>
   <div class="alert alert-primary"><h3>Amanota : {{$score}}/ {{$allQuestions}} </h3></div>
     <button wire:click.prevent="startAgain" class="btn btn-primary"><i class='fas fa-angle-double-left'></i> Subiramo</button>
 

@@ -32,7 +32,7 @@
               <div class="card-wrapper">
                   <h6 class="card-title mbr-fonts-style mb-4 display-2"><strong>Uko bikora</strong></h6>
                   <p class="mbr-text mbr-fonts-style display-7">Dukorana n’ibigo by’amashuri mu kugeza ikoranabuhanga ryacu ku banyeshuri ndetse tukagendana nabo mu rugendo rwo kumenya no gukunda gusoma.&nbsp;<br>.</p>
-                  <div class="mbr-section-btn"><a class="btn btn-danger-outline display-4" href="https://mobiri.se"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Ndifuza iri koranabuhanga</a></div>
+                  <div class="mbr-section-btn"><a class="btn btn-danger-outline display-4" href="{{route('partner')}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Ndifuza iri koranabuhanga</a></div>
               </div>
           </div>
           <div class="col-12 col-lg-7">
@@ -47,48 +47,7 @@
 <section class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
   
   
-  <div class="container">
-      <div class="mbr-section-head">
-          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo bikunzwe</strong></h4>
-          
-      </div>
-      <div class="row mt-4">
-
-        @foreach($featuredBooks as $book)
-       
-        <div style="height:80%" class="col-md-4 card-container item features-image сol-12 col-md-6 col-lg-4">
-          <div class="card-flip">
-              <div class="card front">
-                  <div  class="item-img">
-                      <img style="height: 400px" src="{{asset('storage/books/covers/'.$book->cover)}}">
-                  </div>
-              </div>
-              <div  style="height:100%; background:rgb(38, 220, 233)" class="card back ">
-                  <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                
-                    </p>
-                      <p style="margin-top:120px"><center>
-                        @if ($book->book_type->name=="Written")
-                        <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Soma igitabo</a>
-                       @else
-                       <a class="btn btn-danger display-4" href="{{route('book.listenBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Umva igitabo</a>
-                        @endif
-                     
-                      </center></p>
-                   
-              </div>
-          </div>
-      </div>
-
- @endforeach
-
-       
-     
-        
-        
-       
-      </div>
-  </div>
+    <livewire:featured-books />
 </section>
 
 <section class="form5 cid-sdQt7JBjVy" id="form5-20">

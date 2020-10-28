@@ -13,98 +13,87 @@
       <div class="row justify-content-md-center">
           <div class="col-md-10">
               <h1 class="mbr-section-title mb-3 mbr-fonts-style display-1">
-                  <strong>Intro with Video Popup</strong>
+              <strong>{{$book->title}}</strong>
               </h1>
-              <p class="mbr-text mb-3 mbr-fonts-style display-5">
-                  Full-screen intro with Image and video popup.
-              </p>
-
-            <!--  <div class="mbr-media mb-3 show-modal"   data-toggle="modal" data-target="#audioPlayModal" >
-                  <div class="icon-wrapper">
-                      <span class="mbr-iconfont mobi-mbri-play mobi-mbri" style="color:orange fill: rgb(255, 255, 255);"></span>
-                  </div>
-              </div>-->
-
-
-              <div class="mbr-media mb-3 show-modal"  onclick="playAudio()"  >
-                <div class="icon-wrapper">
-                    <span class="mbr-iconfont mobi-mbri-play mobi-mbri" style="color:orange fill: rgb(255, 255, 255);"></span>
+            
+              <div style="background:rgb(38, 220, 233)" class="item features-image ">
+                <div class="item-wrapper">
+                    
+                    <div class="item-content">
+                        
+                      <audio style="margin-top:150px;margin-bottom:50px" id="myAudio" controls>
+                        <source  src="{{asset('storage/books/contents/'. $book->content)}}" type="audio/mpeg">
+            
+             
+            Your browser does not support the audio element.
+                    </audio> 
+                        
+                    </div>
+                   
                 </div>
             </div>
-
-              <p class="icon-description mb-3 mbr-fonts-style display-7">
-                  Set the link to your video in Block Parameters
-              </p>
           </div>
       </div>
   </div>
   <div>
+     
+  </div>
+</section>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog  ">
 
-
-    <!-- The Modal -->
-<div style="hide" class="modal fade hide" id="audioPlayModal">
-  <div class="modal-dialog">
+    <!-- Modal content-->
     <div class="modal-content">
-
-      <!-- Modal Header -->
-   
-
-      <!-- Modal body -->
-      <div class="modal-body">
-
-        <div style="border-left:5px solid orange" class="alert alert-secondary">
-          <center>   <span class="text-dark">Uri kumva {{$book->title}} </span>    </center>
-        </div>
-        <div style="border-left:5px solid orange" class="alert alert-secondary">   
-<center>
-          <audio  id="myAudio" controls>
-            <source  src="{{asset('storage/books/contents/'. $book->content)}}" type="audio/mpeg">
+      <div class="modal-header">
         
-        
-           </audio> 
-
-
-          </center>
-
-        </div>
-
-        <div class="alert alert-light">
-
-         <i data-dismiss="modal" class="material-icons" style="font-size:48px;color:red">highlight_off</i>
-
-        </div>
-        
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+     
       </div>
+      <div class="modal-body">
+     
+        <div  class="alert alert-success col-12">
+          <h4>Urakoze kumva igitabo!</h4>
+      </div>
+      
+    
+         
+        <p><center> Urashaka  kureba niba wasomye neza igitabo? </center></p>
 
 
-  
-
-      <!-- Modal footer -->
-   
-
+ <center>  <button onclick="openQuiz()" class="btn item-btn btn-danger display-7" > Yego </button>  <a href="#" class="btn item-btn btn-outline-danger display-7"> Oya </a> </center>
+       
+       
+      </div>
+    
     </div>
+
   </div>
 </div>
 
+<!-- end modal -->
 
-
-
-  </div>
-</section>
-
-
-
-
-<section class="content11 cid-sdRDxbuJ0e" id="content11-2e">
-  
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-12 col-lg-10">
-              <div class="mbr-section-btn align-center"><a class="btn btn-danger-outline display-4" href="">Subira inyuma</a></div>
-          </div>
-      </div>
-  </div>
-</section>
 
 @endsection
+
+@section('scripts')
+
+<script>
+  var aud = document.getElementById("myAudio");
+  aud.onended = function() {
+    
+  
+  
+   $('#myModal').modal('show');
+  };
+  </script>
+  
+  <script>
+  function openQuiz() {
+    window.open("{{route('quiz.takeBookQuiz',$book->id)}}");
+   
+  }
+  </script>
+  @endsection
+

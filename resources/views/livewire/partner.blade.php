@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="col-12 form-group" data-for="tel">
-                  <input type="number" name="name" placeholder="Telephone"  wire:model="tel" class="form-control"  id="name-form5-23">
+                  <input type="text" name="name" placeholder="Telephone"  wire:model="tel" class="form-control"  id="name-form5-23">
                   @error('tel') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
                 

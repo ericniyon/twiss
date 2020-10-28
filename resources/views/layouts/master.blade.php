@@ -110,7 +110,7 @@
                             Ahabanza</a></li>
                 <li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('books.writtenBooks')}}">Ibitabo</a></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo by'amajwi</a>
-                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
+                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="/about">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
                 
                 
             </div>
@@ -134,7 +134,7 @@
             <div class="col-6 col-lg-3">
                 <div class="media-wrap col-md-8 col-12">
                     <a href="https://mobiri.se/">
-                        <img src="assets/images/l-276x252.png" alt="Mobirise">
+                        <img src="{{asset('master/assets/images/l-276x252.png')}}" alt="Mobirise">
                     </a>
                 </div>
             </div>
@@ -214,33 +214,7 @@
  <script src="{{asset('master/assets/datepicker/jquery.datetimepicker.full.js')}}"></script>  
  <script src="{{asset('master/assets/theme/js/script.js')}}"></script>  
  <script src="{{asset('master/assets/formoid/formoid.min.js')}}"></script>  
-  <script>
-
-//$( "#audioPlayModal" ).on('shown', function(){
-   // console("I want this to appear after the modal has opened!");
-//});
-
-
-var aud = document.getElementById("myAudio");
-
-
-function playAudio() {
-$('#audioPlayModal').modal('show');
-  aud.play();
-} 
-aud.onended = function() {
-  
-alert("aodio ended")
-
- 
-};
-
-
-$("#audioPlayModal").on("hidden.bs.modal", function () {
-    aud.pause();
-});
-
-  </script>
+ @yield('scripts')
   @livewireScripts
 
 
