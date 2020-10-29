@@ -69,7 +69,7 @@
   <div  class="form-check alert  @if($a->correct) alert-success @endif">
     <input class="form-check-input" type="radio" name="{{$a->question->id}}" id="{{$a->id}}" value="option1" disabled>
     <label class="form-check-label" for="{{$a->id}}">
-        {{$a->option}}  @if($a->correct) <i class="fas fa-check text-success"></i> @endif
+        {{$a->option}} 
     </label>
   </div>
 
@@ -89,7 +89,7 @@
       
           <div  class="row">
              
-           
+           {{$sessions}}
             <div class="col-sm-10">
               <div>
                 @if (session()->has('message'))

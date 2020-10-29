@@ -54,14 +54,12 @@ width: 100%;
 
 @section( 'content')
 
-<section class="content4 cid-sdRFwSVnh8" id="content4-2j" >
-  <livewire:search-book />
-    </section>
 
 
 
 
-<section  class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
+
+<section style="background: white" class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
   
   <livewire:written-book />
   

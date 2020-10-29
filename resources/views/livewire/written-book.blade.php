@@ -1,11 +1,32 @@
 <div>
-    <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byose</strong></h4>
-            
-        </div>
-        <div class="row mt-4">
+    <div class="mbr-section-head">
+        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byose</strong></h4>
+        
+    </div>
+<div class="container">
+    <div class="row justify-content-center">
+          
+     
+              
+        <input 
+        wire:model="query"
+        wire:keydown.escape="reset"
+        wire:keydown.tab="reset"
+        
+      
+        type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
   
+    
+        </div>
+   
+    </div>  
+  
+  
+    @if($books->count()>0)
+    <div class="container">
+        
+        <div class="row mt-4">
+ 
           @foreach($books as $book)
          
           <div style="height:80%" class="col-md-4 card-container item features-image сol-12 col-md-6 col-lg-4">
@@ -33,7 +54,7 @@
    @endforeach
   
          
-       
+      
           
          
         </div>
@@ -41,3 +62,9 @@
    <center>  <p>   {{ $books->links() }} </p> </center>  
     </div>
 </div>
+
+
+@else
+<center> <div class="alert alert-danger col-md-6">Oooh! icyo gitabo ntacyo dufite!</div></center>
+
+@endif
