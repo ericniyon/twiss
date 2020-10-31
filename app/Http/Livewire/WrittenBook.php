@@ -15,12 +15,23 @@ class WrittenBook extends Component
     protected $paginationTheme = 'bootstrap';
     public $query;
     public $queryBooks=[];
+    public $levelID;
     
-    public function mount()
+    
+    
+    public function mount($levelID)
+   
     {
+        $this->levelID = $levelID;
         $this->query = '';
-     
+        
     }
+
+    public function levelName(){
+
+        return Level::find($this->levelID)->name;
+    }
+  
 
     public function updatedQuery()
     {
@@ -31,7 +42,9 @@ class WrittenBook extends Component
         
     $bookType=$bookType->first()->id;
     return   $this->books = Book::where('book_type_id', $bookType)
-                        ->where('title', 'like', '%' . $this->query . '%')->paginate(12);
+                        ->where('title', 'like', '%' . $this->query . '%')
+                        ->where('level_id', $this->levelID)
+                        ->paginate(12);
          
           
 
@@ -41,7 +54,7 @@ class WrittenBook extends Component
 
       
 
-     return view('livewire.written-book',['books'=>$this->updatedQuery()]);
+     return view('livewire.written-book',['books'=>$this->updatedQuery(),'levelName'=>$this->levelName()]);
         //return view('livewire.written-book',['books'=>Book::where('book_type_id', $bookType)->paginate(12)]);
     }
 }

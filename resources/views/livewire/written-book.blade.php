@@ -1,13 +1,14 @@
 <div>
+
+  
     <div class="mbr-section-head">
-        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byose</strong></h4>
+    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byo mu mwaka wa {{$levelName}}</strong></h4>
         
     </div>
-<div class="container">
+<div style="margin-top:20px" class="container">
     <div class="row justify-content-center">
-          
-     
-              
+       
+         <div class="col-lg-12 col-sm-12 col-md-12">     
         <input 
         wire:model="query"
         wire:keydown.escape="reset"
@@ -18,6 +19,7 @@
   
     
         </div>
+    </div>
    
     </div>  
   

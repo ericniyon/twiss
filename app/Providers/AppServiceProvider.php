@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
+
+use App\Models\Level;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $levels=Level::all();
         Paginator::useBootstrap();
+        View::share('levels', $levels);
     }
 
 

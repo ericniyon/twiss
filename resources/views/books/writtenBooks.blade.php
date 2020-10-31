@@ -16,7 +16,7 @@ background-repeat: no-repeat;
   }
   
   input[type=text] {
-width: 40%;
+width: 100%;
 -webkit-transition: width 0.4s ease-in-out;
 transition: width 0.4s ease-in-out;
 }
@@ -49,6 +49,12 @@ width: 100%;
   
   </style>
 
+  
+
+  
+
+
+
 
 @endsection
 
@@ -59,13 +65,16 @@ width: 100%;
 
 
 
+
+
+  
+
 <section style="background: white" class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
   
-  <livewire:written-book />
+  <livewire:written-book :levelID=$levelID />
   
    
 </section>
-
 
 
 @endsection

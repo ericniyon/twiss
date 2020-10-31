@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{{asset('master/assets/theme/css/style.css')}}">
   <link rel="preload" as="style" href="{{asset('master/assets/mobirise/css/mbr-additional.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link rel="stylesheet" href="{{asset('master/assets/scroll_progress.css')}}" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -108,11 +108,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="/">
                             Ahabanza</a></li>
-                <li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('books.writtenBooks')}}">Ibitabo</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
+                                    Ibitabo</a>
+                                    <div class="dropdown-menu">
+        
+                                        @foreach($levels as $key => $level)
+                                        <a class="text-black dropdown-item display-4"href="{{route('books.writtenBooks',$level->id)}}">
+                                        Ibyo mu mwaka wa {{$level->name}}</a>  
+                                        @endforeach
+                                       
+                                           
+        
+        
+                                            </div></li>
                     <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo by'amajwi</a>
-                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="/about">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li></ul>
+                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="/about">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li>
                 
-                
+                 
+
+                 </ul>
             </div>
         </div>
         <!-- scroll progress-->

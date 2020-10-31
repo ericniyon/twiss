@@ -17,7 +17,7 @@ use Alert;
 
 class BooksController extends Controller
 {
-    function writtenBooks(){
+    function writtenBooks($levelID){
         $bookType=BookType::where('name', 'Written')
         ->get();
         
@@ -33,7 +33,7 @@ class BooksController extends Controller
         
 
 
-        return view('books.writtenBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks]);
+        return view('books.writtenBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks,'levelID'=>$levelID]);
     }
 
 
