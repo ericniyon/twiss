@@ -50,7 +50,7 @@
     <livewire:featured-books />
 </section>
 
-<section class="form5 cid-sdQt7JBjVy" id="form5-20">
+<section id="contactUS" class="form5 cid-sdQt7JBjVy" id="form5-20">
   
   <div class="mbr-overlay"></div>
   <div class="container">
@@ -86,7 +86,7 @@
 </section>
 
 
-
+@if($partners->count()>0)
 <section class="clients1 cid-sdLbivjOXP" id="clients1-g">
   
   <div class="images-container container">
@@ -97,31 +97,16 @@
           
       </div>
       <div class="row justify-content-center mt-4">
+          @foreach($partners as $key => $partner)
           <div class="col-md-3 card">
-              <img src="assets/images/1.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/2.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/3.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/4.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/2.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/3.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/4.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/5.png">
-          </div>
+            <img src="{{asset('storage/partners/logos/'.$partner->logo)}}">
+        </div> 
+          @endforeach
+          
+         
       </div>
   </div>
 </section>
+
+@endif
 @endsection

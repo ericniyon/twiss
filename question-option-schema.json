@@ -1,0 +1,36 @@
+{
+    "name":"QuestionOption",
+    "namespace":"App\\Models",
+    "complete_name":"App\\Models\\QuestionOption",
+    "table":{
+        "name":"question_options",
+        "colums":[
+                    { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"question_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"option", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"correct", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"0" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"question",
+            "type":"BelongsTo",
+            "local_key" : "question_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Question",
+                "table":{
+                    "name":"questions",
+                    "colums": [
+                                { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"question_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"option", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"correct", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"0" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

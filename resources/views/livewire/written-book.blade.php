@@ -16,7 +16,9 @@
         
       
         type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
-  
+        <ul wire:loading style="width: 100%;"  id="myUL">
+            <li > Turi kugishaka........ </li>
+        </ul>
     
         </div>
     </div>
@@ -35,7 +37,7 @@
             <div class="card-flip">
                 <div class="card front">
                     <div  class="item-img">
-                        <img style="height: 400px" src="{{asset('storage/books/covers/'.$book->cover)}}">
+                        <img style="height: 450px" src="{{asset('storage/books/covers/'.$book->cover)}}">
                     </div>
                 </div>
                 <div  style="height:100%; background:rgb(38, 220, 233)" class="card back ">
@@ -67,6 +69,8 @@
 
 
 @else
-<center> <div class="alert alert-danger col-md-6">Oooh! icyo gitabo ntacyo dufite!</div></center>
+
+
+<center> <div class="alert alert-danger col-md-6">Oooh! ibyo bitabo ntabyo dufite!</div></center>
 
 @endif

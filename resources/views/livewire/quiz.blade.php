@@ -2,7 +2,7 @@
      
   @if($showAnswers)
 
-  <a href="" class=" btn btn-primary">Subira ku bitabo</a>
+  <a href="{{route('books.writtenBooks',$book->level->id)}}" class=" btn btn-primary">Subira ku bitabo</a>
   @endif
 
 
@@ -41,7 +41,7 @@
 
 
 <div  class=""><p style="font-size: 20px">{{$countQuestions}}. {{$answer->question->question_text}}</p></div>
-<div class="col-sm-10">
+<div class="col-sm-12">
 @foreach($allAnswers as $key => $a)  
 
 @if($a->id==$answer->question_option_id )
@@ -49,7 +49,7 @@
   <div  class="form-check alert alert-success">
     <input class="form-check-input" type="radio" name="{{$a->question->id}}" id="{{$a->id}}" value="option1" checked disabled>
     <label class="form-check-label" for="{{$a->id}}">
-        {{$a->option}} <i class="fas fa-check text-success"></i>
+        {{$a->option}} <i class="fas fa-check text-success"></i> <br>
     </label>
   </div>
 @else
@@ -89,7 +89,7 @@
       
           <div  class="row">
              
-           {{$sessions}}
+          
             <div class="col-sm-10">
               <div>
                 @if (session()->has('message'))
@@ -103,9 +103,9 @@
     
                     @foreach ($question->question_options as $op)
               
-              <div style="margin-right:100px" class="form-check alert">
-                <input wire:model="answer" class="form-check-input" type="radio" id="{{$op->id}}" name="{{$op->question->id}}" value="{{$op->id}}">
-                <label class="form-check-label" for="{{$op->id}}">
+              <div style="margin-right:100px; border:1px solid grey" class="form-check alert">
+                <input style="margin-left:2px" wire:model="answer" class="form-check-input" type="radio" id="{{$op->id}}" name="{{$op->question->id}}" value="{{$op->id}}">
+                <label style="margin-left:20px" class="form-check-label" for="{{$op->id}}">
                     {{$op->option}}
                 </label>
               </div>

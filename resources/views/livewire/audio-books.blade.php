@@ -17,8 +17,13 @@
       
         type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
   
-    
+        <ul wire:loading style="width: 100%;"  id="myUL">
+            <li > Turi kugishaka........ </li>
+        </ul>
         </div>
+     
+               
+       
     </div>
    
     </div>  
@@ -31,7 +36,7 @@
  
           @foreach($books as $book)
          
-          <div style="height:80%" class="col-md-4 card-container item features-image сol-12 col-md-6 col-lg-4">
+          <div style="height:80%" class="col-md-3 card-container item features-image сol-12 col-md-6 col-lg-4">
             <div class="card-flip">
                 <div class="card front">
                     <div  class="item-img">

@@ -18,53 +18,21 @@ use Alert;
 class BooksController extends Controller
 {
     function writtenBooks($levelID){
-        $bookType=BookType::where('name', 'Written')
-        ->get();
-        
-     $bookType=$bookType->first()->id;
-    
-      
-    $books=Book::where('book_type_id', $bookType)->paginate(12);
-        //$books= Book::paginate(15);
-        $featuredBooks=Book::where('feautured',1)
-                             ->where('book_type_id' , $bookType)
-                           ->get();
-       $levels=Level::all();
-        
-
-
-        return view('books.writtenBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks,'levelID'=>$levelID]);
+       return view('books.writtenBooks',['levelID'=>$levelID]);
     }
 
 
     function audioBooks($levelID){
-
-        
-            $bookType=BookType::where('name', 'Audio')
-            ->get();
-            
-         $bookType=$bookType->first()->id;
-        
-          
-        $books=Book::where('book_type_id', $bookType)->paginate(12);
-            //$books= Book::paginate(15);
-            $featuredBooks=Book::where('feautured',1)
-            ->where('book_type_id' , $bookType)
-          ->get();
-           $levels=Level::all();
-            
-    
-    
-            return view('books.audioBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks,'levelID'=>$levelID]);
+    return view('books.audioBooks',['levelID'=>$levelID]);
     }
 
 
     function readBook($book){
 
         $book= Book::find($book);
-        $url = Storage::url($book->content);
+        
 
-        return view('books.readBook',['book'=>$book,'url'=>$url]);
+        return view('books.readBook',['book'=>$book]);
     }
 
 
@@ -77,63 +45,24 @@ class BooksController extends Controller
         return view('books.listenBook',['book'=>$book]);
     }
 
-    function filterWritten($id){
-
-        $bookType=BookType::where('name', 'Written')
-        ->get();
-        
-     $bookType=$bookType->first()->id;
-        $level=Level::find($id);
-        $level_id=$level->id;
-        $bookNum=Book::where('level_id', $level_id)
-        ->where('book_type_id', $bookType)
-        
-        ->count();
-        if ($bookNum==0){
-
-            return redirect()->back()->with("warning", "Mutwihanganire nta bitabo byo   mumwaka wa " . $level->name . " dufite aka kanya.");
-        }
-
-
-        
-    
-      
-    $books=Book::where('book_type_id', $bookType)
-                 ->where('level_id', $level_id)
-    ->paginate(12);
-      
-        
-        $levels=Level::all();
-        return view('books.filterWritten',['level'=>$level,'levels'=>$levels,'books'=>$books]);
-    }
-
-    function filterAudio($id){
-        $bookType=BookType::where('name', 'Audio')
-        ->get();
-        
-     $bookType=$bookType->first()->id;
-        $level=Level::find($id);
-        $level_id=$level->id;
-        $bookNum=Book::where('level_id', $level_id)
-        ->where('book_type_id', $bookType)
-        ->count();
-        if ($bookNum==0){
-
-            return redirect()->back()->with("warning", "Mutwihanganire nta bitabo byo   mumwaka wa " . $level->name . " dufite aka kanya.");
-        }
-        
-        $books=Book::where('level_id', $level_id)
-        ->where('book_type_id', $bookType)
-        ->paginate(12);
-        
-        $levels=Level::all();
-        return view('books.filterAudio',['level'=>$level,'levels'=>$levels,'books'=>$books]);
-    }
+   
 
     function endReading($bookID){
 
-$bookID=$bookID;
+      $book=Book::find($bookID);
 
-return view('books.endReading', ['bookID'=>$bookID]);
+
+      if($book->quiz->questions->count()>0){
+        
+        return view('books.endReading', ['bookID'=>$bookID,'book'=>$book]);
+
+}
+
+else{
+    
+    return redirect()->route('books.writtenBooks',$book->level->id);
+      }
+
+    
     }
 }

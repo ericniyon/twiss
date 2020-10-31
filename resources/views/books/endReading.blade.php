@@ -15,18 +15,18 @@
     <div  class="modal-dialog  modal-lg">
   
       <!-- Modal content-->
-      <div style="border-left:5px solid orange" class="modal-content">
+      <div  class="modal-content">
       
         <div style="background-image: url('https://giphy.com/gifs/l46CbKgZ1hvJjxfZS/html5');" class="modal-body">
        
-  <div class="alert alert-success">  <center>  <h4>Urakoze gusoma.</h4> </center></div>
+  <div style="background:green" class="alert">  <center>  <h4>Urakoze gusoma.</h4> </center></div>
       
         
            
           <p><center> Urashaka  gukora isuzuma? </center></p>
   
   
-   <center>  <a href="{{route('quiz.takeBookQuiz',$bookID)}}" class="btn btn-primary "> Yego  </a>  <a href="#" class="btn btn-default"> Oya </a> </center>
+        <center>  <a style="background:orange" href="{{route('quiz.takeBookQuiz',$bookID)}}" class="btn "> Yego  </a>  <a href="{{route('books.writtenBooks',$book->level->id)}}" style="border: 1px solid orange"class="btn "> Oya </a> </center>
          
          
         </div>

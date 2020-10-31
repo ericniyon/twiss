@@ -1,0 +1,20 @@
+{
+    "name":"Partner",
+    "namespace":"App\\Models",
+    "complete_name":"App\\Models\\Partner",
+    "table":{
+        "name":"partners",
+        "colums":[
+                    { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"name", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"logo", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"contract", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"tel", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"email", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"web_link", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+            ]
+}

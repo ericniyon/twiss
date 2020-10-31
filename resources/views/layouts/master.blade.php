@@ -91,8 +91,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="{{asset('master/assets/images/logo-105x33.png')}}" alt="Mobirise" style="height: 3rem;">
+                    <a href="/">
+                        <img src="{{asset('master/assets/images/logo.jpg')}}" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
                 
@@ -171,58 +171,50 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3">
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>About</strong>
+                    <strong>Abo turibo</strong>
                 </h5>
                 <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                    Mobirise is a free offline app for
-                    Windows and Mac to easily create small/medium websites, landing pages, online resumes and
-                    portfolios.</p>
+                   <strong>TWIS</strong> ni company y'ikoranabuhanga itanga ibitabo byo gusoma ku banyeshuri bo mu mashuri abanza mu buryo bugezweho kandi mu rurimi rw'ikinyarwanda gusa.</p>
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-7">
-                    <strong>Follow Us</strong>
+                    <strong>Dukurikire</strong>
                 </h5>
                 <div class="social-row display-7">
                     <div class="soc-item">
-                        <a href="https://twitter.com/mobirise" target="_blank">
+                        <a href="https://www.facebook.com/twisomere.twis.5  " target="_blank">
                             <span class="mbr-iconfont socicon socicon-facebook"></span>
                         </a>
                     </div>
                     <div class="soc-item">
-                        <a href="https://twitter.com/mobirise" target="_blank">
+                        <a href="https://twitter.com/twisomere  " target="_blank">
                             <span class="mbr-iconfont socicon socicon-twitter"></span>
                         </a>
                     </div>
                     <div class="soc-item">
-                        <a href="https://twitter.com/mobirise" target="_blank">
+                        <a href="https://www.instagram.com/twisomere2020/" target="_blank">
                             <span class="mbr-iconfont socicon socicon-instagram"></span>
                         </a>
                     </div>
-                    <div class="soc-item">
-                        <a href="https://twitter.com/mobirise" target="_blank">
-                            <span class="mbr-iconfont socicon socicon-instagram"></span>
-                        </a>
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Mobirise Help</strong>
+                    <strong>Ubufasha</strong>
                 </h5>
                 <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">Help Center</li>
-                    <li class="mbr-text item-wrap">Mobirise Forums</li>
-                    <li class="mbr-text item-wrap">Mobirise Kit</li>
-                    <li class="mbr-text item-wrap">Our site</li>
+                    <li class="mbr-text item-wrap">FAQ</li>
+                    <li class="mbr-text item-wrap"><a class="mbr-text" href="#contactUs">Tuvugishe</a></li>
+                 
                 </ul>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Mobirise Extensions</strong>
+                    <strong>Amapage</strong>
                 </h5>
                 <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">Code Editor</li>
-                    <li class="mbr-text item-wrap">Form Builder</li>
-                    <li class="mbr-text item-wrap">Popup Builder</li>
-                    <li class="mbr-text item-wrap">Enterprise</li>
+                    <li class="mbr-text item-wrap"> <a class="mbr-text" href="/partner">Abafatanyabikorwa</a></li>
+                    <li class="mbr-text item-wrap"><a class="mbr-text" href="/">Ahabanza</a></li>
+                    
                 </ul>
             </div>
             

@@ -4,12 +4,12 @@
 
 @section('path')
 <div class="title">
-    <h4>Question</h4>
+    <h4>Partner</h4>
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="http://twis.test">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Question</li>
+        <li class="breadcrumb-item active" aria-current="page">All Partner</li>
     </ol>
 </nav>
 
@@ -29,17 +29,25 @@
 @endif
 
 
-<a style="margin-bottom:20px" href="{{route('questions.create')}}" class="btn btn-success"><i class="icon-copy fa fa-plus" aria-hidden="true"></i>New</a>
+<a style="margin-bottom:20px" href="{{route('partners.create')}}" class="btn btn-success"><i class="icon-copy fa fa-plus" aria-hidden="true"></i>New</a>
    <table class="data-table table stripe hover nowrap">
    
-    @if(count($questions))
+    @if(count($partners))
     <thead>
         <tr>
                         
-                                    <th>Question Text</th>
-                                    <th>Quiz</th>
+                                    <th>Name</th>
             
-                        
+                                 
+            
+                                    <th>Contract</th>
+            
+                                    <th>Tel</th>
+            
+                                    <th>Email</th>
+            
+                                    <th>Web Link</th>
+            
                         
                         
                      
@@ -54,11 +62,15 @@
     @endif
     <tbody>
 
-    @forelse($questions as $question)
+    @forelse($partners as $partner)
     <tr>
-                    <td>{{$question->question_text}}</td>
-                    <td>{{$question->quiz->name}}</td>
-                                
+                    <td>{{$partner->name}}</td>
+              
+                <td>{{$partner->contract}}</td>
+                <td>{{$partner->tel}}</td>
+                <td>{{$partner->email}}</td>
+                <td>{{$partner->web_link}}</td>
+                        
 
 
     
@@ -69,13 +81,13 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                 
-            <a class="dropdown-item" href="{{route('questions.edit',['question'=>$question] )}}"><i class="dw dw-edit2"></i> Edit</a>
+            <a class="dropdown-item" href="{{route('partners.edit',['partner'=>$partner] )}}"><i class="dw dw-edit2"></i> Edit</a>
 
-            <a class="dropdown-item"  href="{{route('questions.show',['question'=>$question] )}}"><i class="dw dw-eye"></i> Show</a>
+            <a class="dropdown-item"  href="{{route('partners.show',['partner'=>$partner] )}}"><i class="dw dw-eye"></i> Show</a>
             <a class="dropdown-item"  href="javascript:void(0)" onclick="event.preventDefault();
-            document.getElementById('delete-question-{{$question->id}}').submit();"> <i class="dw dw-eye"></i> Delete</a>
+            document.getElementById('delete-partner-{{$partner->id}}').submit();"> <i class="dw dw-eye"></i> Delete</a>
 
-<form id="delete-question-{{$question->id}}" action="{{route('questions.destroy',['question'=>$question])}}" method="POST" style="display: none;">
+<form id="delete-partner-{{$partner->id}}" action="{{route('partners.destroy',['partner'=>$partner])}}" method="POST" style="display: none;">
 @csrf
 @method('DELETE')
 </form>
@@ -88,7 +100,7 @@
     
     
     @empty
-    <p>No Questions</p>
+    <p>No Partners</p>
 </tr>
     @endforelse
        

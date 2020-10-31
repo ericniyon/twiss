@@ -405,7 +405,7 @@ textarea.form-control.is-invalid {
 
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Books</span>
+							<span class="micon dw dw-library"></span><span class="mtext">Books</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="{{route('books.create')}}">Add Book</a></li>
@@ -416,27 +416,9 @@ textarea.form-control.is-invalid {
 					</li>
 
 
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Cartoons</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="{{route('cartoons.create')}}">Add cartoon</a></li>
-							<li><a href="{{route('cartoons.index')}}">All cartoons</a></li>
-						</ul>
-					</li>
+				
 					
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-apartment"></span><span class="mtext"> Games </span>
-						</a>
-						<ul class="submenu">
-						
-							<li><a href="#">Add Games</a></li>
-                            	<li><a href="#">All Games</a></li>
-						
-						</ul>
-					</li>
+					
 				
 				
 
@@ -461,8 +443,40 @@ textarea.form-control.is-invalid {
 							<li><a href="{{route('questions.index')}}">All Questions</a></li>
 						</ul>
 					</li>
+
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Question options</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="{{route('question-options.create')}}">Add question option</a></li>
+							<li><a href="{{route('question-options.index')}}">question option</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Partners</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="{{route('partners.create')}}">Add Partner</a></li>
+							<li><a href="{{route('partners.index')}}">All Partners</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Partnership request</span>
+						</a>
+						<ul class="submenu">
+							
+							<li><a href="{{route('partnership-requests.index')}}">All Partnership request</a></li>
+						</ul>
+					</li>
+
+
 				
-				
+					
 
 			
 					

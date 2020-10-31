@@ -96,69 +96,7 @@ class BookController extends Controller
 
              $request->cover->storeAs('books/covers',$cover, 'public');
 
-            //$CheckBookType=BookType::find($request->bookType)->name;
-
-
-            // if($CheckBookType=="Written"){
-
-             //   $bookTypeValidate = Validator::make($request->all(),[
-                   
-               //     'content'=>'required|mimes:pdf',]);
-
-            // }
-
-
-           //  else{
-                
-
-             //   $bookTypeValidate = Validator::make($request->all(),[
-                   
-               //     'content'=>'required|mimes:mp3',]);
-
-
-            // }
-          
-   
-           //  if ($bookTypeValidate->fails()) {
-             //   return redirect()->back()->with("warning", "Please choose mp3 if you choose audio or pdf if choose written book")
-                       //                 ->withErrors($bookTypeValidate);
-            //  }
-            
-           
-   
-
-          /// if($request->hasFile('content')){
-   
-           ///    $content= $request->content->getClientOriginalName();
-              
-          //     $contentExist=Book::where('content', $content)->count();
-           //    if($contentExist>0){
-
-         //      return redirect()->back()->with('warning', "We already have content with the same name please change the name");
-          //     }
-                
-              
-         //  $request->content->storeAs('books/contents',$content, 'public');
-
-       //    }
-
-          
-   
-   
-         //  if($request->hasFile('cover')){
-   
-          //     $cover= $request->cover->getClientOriginalName();
-
-
-         //      $coverExist=Book::where('cover', $cover)->count();
-         //      if($coverExist>0){
-
-          //      return redirect()->back()->with('warning', "We already have cover with the same name please change the name");
-          //     }
-              // $request->cover->storeAs('books/covers',$cover, 'public'); 
-         //  }
-
-         
+        
             $book= new Book;
            
            $book->title=$request->title;

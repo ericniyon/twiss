@@ -1,0 +1,19 @@
+{
+    "name":"PartnershipRequest",
+    "namespace":"App\\Models",
+    "complete_name":"App\\Models\\PartnershipRequest",
+    "table":{
+        "name":"partnership_requests",
+        "colums":[
+                    { "name":"id", "type":"BigInt", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"name", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"interest", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"tel", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"email", "type":"String", "length":"255", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"accepted", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"0" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+            ]
+}

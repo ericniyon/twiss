@@ -62,7 +62,7 @@
         <p><center> Urashaka  kureba niba wasomye neza igitabo? </center></p>
 
 
- <center>  <button onclick="openQuiz()" class="btn item-btn btn-danger display-7" > Yego </button>  <a href="#" class="btn item-btn btn-outline-danger display-7"> Oya </a> </center>
+    <center>  <a href="{{route('quiz.takeBookQuiz',$book->id)}}" class="btn item-btn btn-danger display-7" > Yego </button>  <a href="{{route('books.audioBooks',$book->level->id)}}" class="btn item-btn btn-outline-danger display-7"> Oya </a> </center>
        
        
       </div>
@@ -88,12 +88,6 @@
    $('#myModal').modal('show');
   };
   </script>
-  
-  <script>
-  function openQuiz() {
-    window.open("{{route('quiz.takeBookQuiz',$book->id)}}");
-   
-  }
-  </script>
+ 
   @endsection
 

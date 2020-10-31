@@ -10,6 +10,7 @@ use App\Models\Level;
 use App\Models\Question;
 use App\Models\QuestionOption;
 use App\Models\Answer;
+use Illuminate\Support\Str;
 
 
 class Quiz extends Component
@@ -37,29 +38,47 @@ public $checkCorrect = false;
     public function mount($bookID)
 {
     $this->bookID = $bookID;
+    $random_string =rand(1,100000);
+    $is_unique = false;
+    
+    while (!$is_unique) {
+        $result = Answer::where('user_id', $this->userID)->count();
+        if($result == 0) {  // if you don't get a result, then you're good
+            $is_unique = true;}
+        else    {                 // if you DO get a result, keep trying
+            $random_string = Str::random(10);}
+    }
+
+
+    $this->userID= $random_string ;
     
 }
 
 
-public function checkUserID(){
+public function UserID(){
+   
+    $random_string =rand(1,100000);
+    $is_unique = false;
+    
+    while (!$is_unique) {
+        $result = Answer::where('user_id', $this->userID)->count();
+        if($result == 0) {  // if you don't get a result, then you're good
+            $is_unique = true;}
+        else    {                 // if you DO get a result, keep trying
+            $random_string = Str::random(10);}
+    }
 
 
-    //if (Auth::check()) {
-        // The user is logged in...
-       // $this->userID=Auth::id();
-    //}
+    $this->userID= $random_string ;
 
-    //else{
 
-     //  $this->countUser=User::all()->count();
-
-      // $this->userID=$this->countUser;
-    //}
+} 
+    
 
 
     
    
-}
+
 
 
 
@@ -80,10 +99,12 @@ public function store()
 
     ]);
 
+    //$this->UserID();
+
     if(!$this->answer==""){
 
 
-    $checkAnswer= Answer::where('user_id',1)
+    $checkAnswer= Answer::where('user_id',$this->userID)
     ->where('quiz_id', $this->quizID() )
     ->where('question_id',$this->questionID)->count();
 
@@ -108,14 +129,14 @@ public function store()
 
     else{
 
-        $answer= new Answer;
+    $answer= new Answer;
 
 
-        $answer->question_id=$this->questionID;
+    $answer->question_id=$this->questionID;
     $answer->question_option_id=$this->answer;
     $answer->quiz_id=$this->quizID();
     $answer->is_correct=1;
-    $answer->user_id=1;
+    $answer->user_id=$this->userID;
     $answer->save();
     }
   
@@ -198,7 +219,7 @@ public function showAnswers(){
    $this->showAnswers=true;
 
    $this->complited=false;
-$this->myAnswers= Answer::where('user_id',1)
+$this->myAnswers= Answer::where('user_id',$this->userID)
 ->where('quiz_id', $this->quizID())->get();
 }
 
@@ -208,13 +229,13 @@ $this->myAnswers= Answer::where('user_id',1)
     public function render()
     {
 
-      
+        //session()->put('currentQuestion',$this->count);
         $this->question=Book::find($this->bookID)->quiz->questions->get($this->count);
         $this->questionID=$this->question->id;
        // ->toArray();
 
       
-        return view('livewire.quiz', ['myAnswers'=>$this->myAnswers]);
+        return view('livewire.quiz', ['myAnswers'=>$this->myAnswers,'book'=>Book::find($this->bookID)]);
     }
 
 

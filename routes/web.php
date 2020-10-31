@@ -37,48 +37,37 @@ Route::group([ 'prefix' => 'admin','middleware' => ['web']], function ()  {
     
     //Route::resource('quizes', 'Managers\quizes\QuizController');
     Route::delete('/destroyCartoonQuiz/{cartoon}', 'Managers\quizes\QuizController@destroyCartoonQuiz')->name('quizes.destroyCartoonQuiz');
+    Route::resource('partners', App\Http\Controllers\admin\PartnerController::class);
+    Route::resource('partnership-requests', App\Http\Controllers\admin\PartnershipRequestController::class);
+    Route::resource('question-options', App\Http\Controllers\admin\QuestionOptionController::class);
+
 
    
     
 });
 
-Route::resource('questionss', App\Http\Controllers\QuestionController::class);
-Route::resource('question-options', App\Http\Controllers\QuestionController::class);
+//Route::resource('questionss', App\Http\Controllers\QuestionController::class);
+//Route::resource('question-options', App\Http\Controllers\QuestionController::class);
 
 
 
 
 Route::group([ 'prefix' => 'books'], function ()  {
-  
-  
-    Route::get('/written-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('books.writtenBooks');
-
-    Route::get('/audio-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('books.audioBooks');
-    Route::get('/read/{book}',  [App\Http\Controllers\Books\BooksController::class ,'readBook'])->name('book.readBook');
-    Route::get('/listen/{bookId}',  [App\Http\Controllers\Books\BooksController::class ,'listenBook'])->name('book.listenBook');
-    Route::get('/written-books/level/{level}', [App\Http\Controllers\Books\BooksController::class ,'filterWritten'])->name('book.filterWritten');
-   // Route::get('/audio-books/level/{level}', [App\Http\Controllers\Books\BooksController::class ,'filterWritten'] 'Books\BooksController@filterWritten')->name('book.filterAudio');
-    
-   Route::get('/endReading/{bookID}', [App\Http\Controllers\Books\BooksController::class ,'endReading'] 
-  
-   
-   
-   )->name('endReading');
+  Route::get('/written-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('books.writtenBooks');
+  Route::get('/audio-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('books.audioBooks');
+  Route::get('/read/{book}',  [App\Http\Controllers\Books\BooksController::class ,'readBook'])->name('book.readBook');
+  Route::get('/listen/{bookId}',  [App\Http\Controllers\Books\BooksController::class ,'listenBook'])->name('book.listenBook');
+  Route::get('/endReading/{bookID}', [App\Http\Controllers\Books\BooksController::class ,'endReading'] 
+  )->name('endReading');
     
 });
 
 
 
 Route::group([ 'prefix' => 'quiz'], function ()  {
-  
-  
-    //Route::get('/start', 'Quizes\QuizController@index')->name('quiz.index');
-
-    Route::get('/start/{bookID}', [App\Http\Controllers\Quizes\QuizController::class ,'takeBookQuiz'])->name('quiz.takeBookQuiz');
+Route::get('/start/{bookID}', [App\Http\Controllers\Quizes\QuizController::class ,'takeBookQuiz'])->name('quiz.takeBookQuiz');
     
-    //Route::get('/test', 'Quizes\QuizController@test')->name('quiz.test');
-
-    Route::post('/start/start/{bookID}', [App\Http\Controllers\Quizes\QuizController::class ,'nextQuestion'])->name('quiz.nextQuestion');
+    
     
     
 });  

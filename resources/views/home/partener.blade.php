@@ -19,38 +19,30 @@
   </div>
 </section>
 
-<section class="clients1 cid-sdRyw6I9XR" id="clients1-25">
+
+@if($partners->count()>0)
+<section class="clients1 cid-sdLbivjOXP" id="clients1-g">
   
   <div class="images-container container">
       <div class="mbr-section-head">
-          <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Abamaze kutwizera</strong></h3>
+          <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+              <strong>Abafatanyabikorwa</strong></h3>
           
           
       </div>
       <div class="row justify-content-center mt-4">
+          @foreach($partners as $key => $partner)
           <div class="col-md-3 card">
-              <img src="assets/images/1.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/2.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/3.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/4.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/2.png">
-          </div>
-          <div class="col-md-3 card">
-              <img src="assets/images/3.png">
-          </div>
+            <img src="{{asset('storage/partners/logos/'.$partner->logo)}}">
+        </div> 
+          @endforeach
           
-          
+         
       </div>
   </div>
 </section>
+
+@endif
 
 
 @endsection
