@@ -1,178 +1,80 @@
-<!-- Developed by Takit -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{asset('master/css/books.css')}}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-    />
-     @livewireStyles
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>TWIS</title>
-  </head>
-
-  <body>
-    <div class="main">
-
-    @include('partials.header')
-
-    
-      <!-- hero section -->
-      <div class="hero">
-        <div class="content-hero">
-          <div class="explore">
-     <img src="{{asset('master/images/books.png')}}" alt="books" />
-            <h3>REBA IBITABO DUFITE BYOSE</h3>   
-          </div>
-          <h1 style="font-size:60px">IBITABO BY'AMAJWI</h1>
-       <a style="margin-left:220px;font-size:15px" href="#readings" class="button">UMVA IGITABO</a>   
-        </div>
-      </div>
-    </div>
-    <!-- end hero section -->
-
-    <!-- books section -->
-
-    <div class="books-container" id="readings">
-     <div class="browse">
-       
-      </div>
-
-     <div class="content">
-
-        @livewire('search-book')
-
-          </div>
+@extends('layouts.master')
+@section('styles')
+<!-- for search filed-->
+<style>
 
 
-
-
-          <div class="filter-container">
-            <div class="filter" onclick="myFunction()">
-              <div class="filter-icon">
-                <img src="{{asset('master/images/filter.png')}}" alt="filter" />
-              </div>
-              <h3> yungurura </h3>
-            </div>
-            <div class="filter-categories" id="filter">
-              <div class="upload-category">
-                <h3>Umwaka </h3>
-                <ul>
-          
-          
-                  @foreach($levels as $level)
-                    <li>
-                      <a  href="{{route('book.filterAudio',$level->id)}}">Ibyo mu mwaka wa {{$level->name}}</a>
-                    </li>
-                    @endforeach
-                 
-                </ul>
-              </div>
-          
-            
-             
-            </div>
-          </div>
-          
-
-      
-
-        <div class="popular">
-          <h3>IBIKUNZWE CYANE</h3>
-          <div class="separator"></div>
-
-          <div class="books">
-
-             @foreach($featuredBooks as $book)
-
-
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img
-                  src="{{asset('storage/books/covers/'.$book->cover)}}"
-                  alt="Avatar"
-                  style="width: 200px; height: 100%;"
-                />
-              </div>
-
-                 <div class="flip-card-back">
-                <h1>{{$book->title}}y</h1>
-                <p class="author">{{$book->description}}</p>
-
-                @if ($book->book_type->name=="Written")
-                  <a href="{{route('book.readBook',$book->id)}}" class="button">Soma </a>  
-                  @else
-                  <a href="{{route('book.listenBook',$book->id)}}" class="button">Umva igitabo</a>  
-                @endif
-                
-              </div>
-            </div>
-          </div>
-
-        @endforeach
-
-          
-           
-          
-          </div>
-        </div>
-
-
-
-        <div class="kids">
-          <h3>IBITABO BYOSE</h3>
-          <div class="separator"></div>
-          <div class="books">
-
-           @foreach($books as $book)
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-              
-                  <img
-                    src="{{asset('storage/books/covers/'.$book->cover)}}"
-                    alt="Avatar"
-                    style="width: 200px; height: 100%;"
-                  />
-                </div>
-                <div class="flip-card-back">
-                  <h1>{{$book->title}}</h1>
-                <p class="author">{{$book->description}}</p>
-                  @if ($book->book_type->name=="Written")
-                  <a href="{{route('book.readBook',$book->id)}}" class="button">Soma </a>  
-                  @else
-                  <a href="{{route('book.listenBook',$book->id)}}" class="button">Umva igitabo</a>  
-                @endif
-                </div>
-              </div>
-            </div>
-          @endforeach
-        
-
-           
-
-        
-          </div>
-        </div>
-
-<center>  <p>   {{ $books->links() }} </p> </center>
-
-      </div>
-    </div>
-    <!-- end books section -->
-
-    <!-- footer -->
+  #myInput {
+   
+    background-position: 10px 12px; 
+background-repeat: no-repeat; 
+      /* width: 100%; */
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+  }
   
- @include('partials.footer')
-    
+  input[type=text] {
+width: 100%;
+-webkit-transition: width 0.4s ease-in-out;
+transition: width 0.4s ease-in-out;
+}
 
-    <script src="{{asset('master/js/scroll.js')}}"></script>
-    @include('sweetalert::alert')
-    
-     @livewireScripts
-  </body>
-</html>
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+width: 100%;
+}
+  #myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+  }
+  
+  </style>
+
+  
+
+  
+
+
+
+
+@endsection
+
+@section( 'content')
+
+
+
+
+
+
+
+
+  
+
+<section style="background: white" class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
+  
+  <livewire:audio-books :levelID=$levelID />
+  
+   
+</section>
+
+
+@endsection

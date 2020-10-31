@@ -37,7 +37,7 @@ class BooksController extends Controller
     }
 
 
-    function audioBooks(){
+    function audioBooks($levelID){
 
         
             $bookType=BookType::where('name', 'Audio')
@@ -55,7 +55,7 @@ class BooksController extends Controller
             
     
     
-            return view('books.audioBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks]);
+            return view('books.audioBooks',['books'=>$books,'levels'=>$levels,'featuredBooks'=>$featuredBooks,'levelID'=>$levelID]);
     }
 
 

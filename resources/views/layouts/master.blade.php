@@ -122,7 +122,23 @@
         
         
                                             </div></li>
-                    <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Ibitabo by'amajwi</a>
+
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
+                                                    Ibitabo by'amajwi</a>
+                                                    <div class="dropdown-menu">
+                        
+                                                        @foreach($levels as $key => $level)
+                                                        <a class="text-black dropdown-item display-4"href="{{route('books.audioBooks',$level->id)}}">
+                                                        Ibyo mu mwaka wa {{$level->name}}</a>  
+                                                        @endforeach
+                                                       
+                                                           
+                        
+                        
+                                                            </div></li>
+                 
                     </li><li class="nav-item"><a class="nav-link link text-black display-4" href="/about">Abo turibo&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{{route('partner')}}">Abafatanyabikorwa&nbsp;&nbsp;</a></li>
                 
                  

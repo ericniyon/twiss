@@ -53,7 +53,7 @@ Route::group([ 'prefix' => 'books'], function ()  {
   
     Route::get('/written-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('books.writtenBooks');
 
-    Route::get('/audio-books',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('book.audioBooks');
+    Route::get('/audio-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('books.audioBooks');
     Route::get('/read/{book}',  [App\Http\Controllers\Books\BooksController::class ,'readBook'])->name('book.readBook');
     Route::get('/listen/{bookId}',  [App\Http\Controllers\Books\BooksController::class ,'listenBook'])->name('book.listenBook');
     Route::get('/written-books/level/{level}', [App\Http\Controllers\Books\BooksController::class ,'filterWritten'])->name('book.filterWritten');
