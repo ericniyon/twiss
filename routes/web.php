@@ -55,6 +55,8 @@ Route::group([ 'prefix' => 'admin','middleware' => ['web']], function ()  {
 Route::group([ 'prefix' => 'books'], function ()  {
   Route::get('/written-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'WrittenBooks'])->name('books.writtenBooks');
   Route::get('/audio-books/{levelID}',  [App\Http\Controllers\Books\BooksController::class ,'audioBooks'])->name('books.audioBooks');
+  Route::get('/all-audio-books',  [App\Http\Controllers\Books\BooksController::class ,'allAudioBooks'])->name('books.allAudioBooks');
+  Route::get('/all-written-books',  [App\Http\Controllers\Books\BooksController::class ,'allWrittenBooks'])->name('books.allWrittenBooks');
   Route::get('/read/{book}',  [App\Http\Controllers\Books\BooksController::class ,'readBook'])->name('book.readBook');
   Route::get('/listen/{bookId}',  [App\Http\Controllers\Books\BooksController::class ,'listenBook'])->name('book.listenBook');
   Route::get('/endReading/{bookID}', [App\Http\Controllers\Books\BooksController::class ,'endReading'] 

@@ -7,6 +7,8 @@
     <title>Quiz</title>
     @livewireStyles
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{{asset('master/assets/loading.css')}}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -29,7 +31,7 @@
             </center> 
               <div class="alert">
 
-                <h5>Izina ryibazwa: Book name.</h5>
+                <h5>Izina ryibazwa: {{$book->title}}.</h5>
               </div>
 
             </div>

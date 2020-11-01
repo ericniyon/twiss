@@ -2,7 +2,7 @@
 
   
     <div class="mbr-section-head">
-    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byo mu mwaka wa {{$levelName}}</strong></h4>
+    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byose</strong></h4>
         
     </div>
 <div style="margin-top:20px" class="container">

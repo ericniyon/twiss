@@ -22,9 +22,20 @@ class BooksController extends Controller
     }
 
 
+    function allWrittenBooks(){
+      return view('books.allWrittenBooks');
+   }
+
+
     function audioBooks($levelID){
     return view('books.audioBooks',['levelID'=>$levelID]);
     }
+
+    function allAudioBooks(){
+
+      
+      return view('books.allAudioBooks');
+      }
 
 
     function readBook($book){

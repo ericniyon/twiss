@@ -58,11 +58,22 @@
       </div>
       
     
-         
+      @if($book->quiz->questions->count()>0) 
         <p><center> Urashaka  kureba niba wasomye neza igitabo? </center></p>
 
 
-    <center>  <a href="{{route('quiz.takeBookQuiz',$book->id)}}" class="btn item-btn btn-danger display-7" > Yego </button>  <a href="{{route('books.audioBooks',$book->level->id)}}" class="btn item-btn btn-outline-danger display-7"> Oya </a> </center>
+        <center>  <a href="{{route('quiz.takeBookQuiz',$book->id)}}" class="btn item-btn btn-danger display-7" > Yego </button>  <a href="{{route('books.audioBooks',$book->level->id)}}" class="btn item-btn btn-outline-danger display-7"> Oya </a> 
+            
+             @else
+
+           
+            <center> <button  type="button" data-dismiss="modal" class="btn item-btn btn-danger display-7" > funga </button>   </center>
+
+            @endif
+    
+    
+    
+    </center>
        
        
       </div>

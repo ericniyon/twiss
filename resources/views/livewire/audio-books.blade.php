@@ -18,7 +18,7 @@
         type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
   
         <ul wire:loading style="width: 100%;"  id="myUL">
-            <li > Turi kugishaka........ </li>
+            <li > <livewire:loading /> </li>
         </ul>
         </div>
      

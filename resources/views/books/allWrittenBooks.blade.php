@@ -60,18 +60,9 @@ width: 100%;
 
 @section( 'content')
 
-
-
-
-
-
-
-
-  
-
 <section style="background: white" class="gallery2 cid-sdMVhqtUCf" id="gallery2-1i">
  
-  <livewire:written-book :levelID=$levelID />
+  <livewire:all-written-books />
   
    
 </section>

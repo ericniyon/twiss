@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{asset('master/assets/datepicker/jquery.datetimepicker.min.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/socicon/css/styles.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/theme/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('master/assets/loading.css')}}">
   <link rel="preload" as="style" href="{{asset('master/assets/mobirise/css/mbr-additional.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/mobirise/css/mbr-additional.css')}}" type="text/css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -112,10 +113,11 @@
                                 <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
                                     Ibitabo</a>
                                     <div class="dropdown-menu">
-        
+                                    <a class="text-black dropdown-item display-4"href="{{route('books.allWrittenBooks')}}">
+                                           Ibitabo  by'imyaka yose</a>  
                                         @foreach($levels as $key => $level)
                                         <a class="text-black dropdown-item display-4"href="{{route('books.writtenBooks',$level->id)}}">
-                                        Ibyo mu mwaka wa {{$level->name}}</a>  
+                                        Ibitabo byo mu mwaka wa {{$level->name}}</a>  
                                         @endforeach
                                        
                                            
@@ -128,7 +130,8 @@
                                                 <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="true">
                                                     Ibitabo by'amajwi</a>
                                                     <div class="dropdown-menu">
-                        
+                                                        <a class="text-black dropdown-item display-4"href="{{route('books.allAudioBooks')}}">
+                                                            Ibitabo  by'imyaka yose</a>  
                                                         @foreach($levels as $key => $level)
                                                         <a class="text-black dropdown-item display-4"href="{{route('books.audioBooks',$level->id)}}">
                                                         Ibyo mu mwaka wa {{$level->name}}</a>  
@@ -249,7 +252,7 @@ window.onbeforeunload = function() {
   }
 }
    </script>-->
-     
+  <!-- <script src="//code.tidio.co/ucbwx9wi19gghfi9srdodxrpimnbffjt.js" async></script> -->
   <input name="animation" type="hidden">
   </body>
 </html>

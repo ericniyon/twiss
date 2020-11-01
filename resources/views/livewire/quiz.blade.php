@@ -7,7 +7,28 @@
 
 
 
-    @if(!$showAnswers && !$complited)<div  class=""><p style="font-size: 20px">{{$count+1}}.{{$question->question_text}} ?</p></div> @endif
+    @if(!$showAnswers && !$complited)
+    @if($count>0)
+      @php
+         $currentQuestion=$count+1;
+    $ratio=$currentQuestion*100;
+     $percent=$ratio/$allQuestions;
+      @endphp
+
+      @else
+
+      @php
+        $percent=0;
+      @endphp
+    @endif
+   
+    <div  style="margin-bottom:10px " class="progress">
+    <div class="progress-bar" role="progressbar" style="width: {{$percent}}%" aria-valuenow="{{$percent}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    <div  class=""><p style="font-size: 20px">{{$count+1}}.{{$question->question_text}} ?</p>
+    </div> 
+    @endif
   <div class="card-body">
 
 
@@ -98,6 +119,7 @@
                     </div>
                 @endif
             </div>
+            
                 @error('answer')  <span class="text-danger">Banza usubize ikibazo!</span>@enderror
                 <form >
     
@@ -110,8 +132,10 @@
                 </label>
               </div>
                  @endforeach
-             
-                 <button wire:click.prevent="store"  class="btn btn-outline-primary">Igikurikiyeho <i class='fas fa-angle-double-right'></i></button>
+                 
+                 <div wire:loading wire:target="store">
+                  <livewire:loading />
+              </div><button wire:loading.remove wire:target="store" wire:click.prevent="store"  class="btn btn-outline-primary">Igikurikiyeho <i class='fas fa-angle-double-right'></i></button>
             </form>
             </div>
           </div>

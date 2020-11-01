@@ -14,7 +14,7 @@
               
               <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-7">Umusomyi wa none niwe muyobozi w'ejo.</p>
 
-              <div class="mbr-section-btn"><a class="btn btn-info display-4" href="https://mobiri.se">Soma igitabo</a> <a class="btn btn-danger display-4" href="https://mobiri.se">Umva igitabo</a></div>
+          <div class="mbr-section-btn"><a class="btn btn-info display-4" href="{{route('books.allWrittenBooks')}}">Soma igitabo</a> <a class="btn btn-danger display-4" href="{{route('books.allAudioBooks')}}">Umva igitabo</a></div>
           </div>
       </div>
   </div>
@@ -48,6 +48,7 @@
   
   
     <livewire:featured-books />
+    
 </section>
 
 <section id="contactUS" class="form5 cid-sdQt7JBjVy" id="form5-20">

@@ -26,7 +26,7 @@
   <div class="images-container container">
       <div class="mbr-section-head">
           <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Abafatanyabikorwa</strong></h3>
+              <strong>Abamaze kutwizera</strong></h3>
           
           
       </div>

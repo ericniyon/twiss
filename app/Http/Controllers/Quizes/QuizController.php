@@ -16,10 +16,10 @@ class QuizController extends Controller
 {
   function takeBookQuiz(Request $request , $bookID){
     $bookID=$bookID;
-    
+    $book=Book::find($bookID);
      
      
-    return view('quizes.start',['bookID'=>$bookID ]);
+    return view('quizes.start',['bookID'=>$bookID , 'book'=>$book]);
         
    }
 

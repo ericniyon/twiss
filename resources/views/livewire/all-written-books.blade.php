@@ -1,8 +1,8 @@
-<div>
+<div >
 
   
     <div class="mbr-section-head">
-    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byo mu mwaka wa {{$levelName}}</strong></h4>
+    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo byose</strong></h4>
         
     </div>
 <div style="margin-top:20px" class="container">
@@ -18,7 +18,7 @@
         type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
         <div wire:loading >
             <ul   style="width: 100%;"  id="myUL">
-                <li > <livewire:loading /> </li>
+              <center>  <li > <livewire:loading /> </li></center>
             </ul>
         
         </div>
@@ -28,9 +28,10 @@
    
     </div>  
   
-  
+   
     @if($books->count()>0)
-    <div class="container">
+    
+    <div wire:loading.remove class="container">
         
         <div class="row mt-4">
  
