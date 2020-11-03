@@ -17,9 +17,11 @@
       
         type="text" id="myInput"  placeholder="Andika hano igitabo ushaka..">
   
-        <ul wire:loading style="width: 100%;"  id="myUL">
-            <li > <livewire:loading /> </li>
-        </ul>
+        <div wire:loading >
+            <ul   style="width: 100%;"  id="myUL">
+              <center>  <li > <livewire:loading /> </li></center>
+            </ul>
+        
         </div>
      
                
@@ -30,7 +32,7 @@
   
   
     @if($books->count()>0)
-    <div class="container">
+    <div wire:loading.remove class="container">
         
         <div class="row mt-4">
  

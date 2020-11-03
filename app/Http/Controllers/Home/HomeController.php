@@ -39,5 +39,12 @@ class HomeController extends Controller
     }
 
 
+    function termsPrivacy(){
+      
+
+        return view('home.terms_and_privacy');
+    }
+
+
    
 }

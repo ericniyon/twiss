@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title')
+Partner
+@endsection
 
 @section('content')
   

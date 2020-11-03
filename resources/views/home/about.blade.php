@@ -1,4 +1,8 @@
 @extends('layouts.master')
+
+@section('title')
+About us
+@endsection
 @section( 'content')
 <section class="image3 cid-sdQvU0wvwB" id="image3-21">
     
@@ -34,7 +38,7 @@
                   </div>
                   <div class="content-wrap">
                       <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Cliff Ingabo</strong></h5>
-                      <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Umuyobozi Mukuru</strong></h6>
+                      <h6 style="font-size:15px" class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Umuyobozi Mukuru</strong></h6>
                       
                       <div class="social-row display-7">
                           <div class="soc-item">
@@ -63,16 +67,16 @@
                   </div>
                   <div class="content-wrap">
                       <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Daisy Kabarebe</strong></h5>
-                      <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Ushinzwe ibikorwa</strong></h6>
+                      <h6 style="font-size:15px" class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Ushinzwe ibikorwa</strong></h6>
                       
                       <div class="social-row display-7">
                           <div class="soc-item">
-                              <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                              <a href="#" target="_blank">
                                   <span class="mbr-iconfont socicon-linkedin socicon"></span>
                               </a>
                           </div>
                           <div class="soc-item">
-                              <a href="https://twitter.com/mobirise" target="_blank">
+                              <a href="https://twitter.com/Kabarebe_daisy" target="_blank">
                                   <span class="mbr-iconfont socicon socicon-twitter"></span>
                               </a>
                           </div>
@@ -92,7 +96,7 @@
                   </div>
                   <div class="content-wrap">
                       <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Yves Himbaza</strong></h5>
-                      <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Ushinzwe Ikoranabuhanga</strong></h6>
+                      <h6 style="font-size:15px" class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Ushinzwe Ikoranabuhanga</strong></h6>
                       
                       <div class="social-row display-7">
                           <div class="soc-item">
@@ -101,7 +105,7 @@
                               </a>
                           </div>
                           <div class="soc-item">
-                              <a href="https://twitter.com/mobirise" target="_blank">
+                              <a href="#" target="_blank">
                                   <span class="mbr-iconfont socicon socicon-twitter"></span>
                               </a>
                           </div>
@@ -121,7 +125,7 @@
                   </div>
                   <div class="content-wrap">
                       <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Prince Niyonshuti</strong></h5>
-                      <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Umuhuzabikorwa</strong></h6>
+                      <h6 style="font-size:15px" class="mbr-role mbr-fonts-style align-center mb-3 display-7"><strong>Umuhuzabikorwa</strong></h6>
                       
                       <div class="social-row display-7">
                           <div class="soc-item">
@@ -130,7 +134,7 @@
                               </a>
                           </div>
                           <div class="soc-item">
-                              <a href="https://twitter.com/mobirise" target="_blank">
+                              <a href="https://twitter.com/npprince47?s=08" target="_blank">
                                   <span class="mbr-iconfont socicon socicon-twitter"></span>
                               </a>
                           </div>

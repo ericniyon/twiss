@@ -40,6 +40,6 @@
           
          
         </div>
-        <center>  <p>   {{ $featuredBooks->links() }} </p> </center> 
+      
     </div>
 </div>

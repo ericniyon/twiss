@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\Home\HomeController::class, 'index'])->name('home');
 Route::get('/partner', [App\Http\Controllers\Home\HomeController::class, 'partner'])->name('partner');
 Route::get('/about',  [App\Http\Controllers\Home\HomeController::class, 'about'])->name('home.about');
+Route::get('/terms_and_privacy',  [App\Http\Controllers\Home\HomeController::class, 'termsPrivacy'])->name('home.termsPrivacy');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect()->route('admin.index') ;

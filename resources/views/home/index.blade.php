@@ -1,5 +1,11 @@
 @extends('layouts.master')
 
+@section('title')
+
+ Home
+
+@endsection
+
 @section('content')
   
 
@@ -14,7 +20,7 @@
               
               <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-7">Umusomyi wa none niwe muyobozi w'ejo.</p>
 
-          <div class="mbr-section-btn"><a class="btn btn-info display-4" href="{{route('books.allWrittenBooks')}}">Soma igitabo</a> <a class="btn btn-danger display-4" href="{{route('books.allAudioBooks')}}">Umva igitabo</a></div>
+          <div class="mbr-section-btn"><a  class="btn btn-info display-4" href="{{route('books.allWrittenBooks')}}">Soma igitabo</a> <a class="btn btn-danger display-4" href="{{route('books.allAudioBooks')}}">Umva igitabo</a></div>
           </div>
       </div>
   </div>
@@ -31,7 +37,7 @@
           <div class="card col-12 col-lg">
               <div class="card-wrapper">
                   <h6 class="card-title mbr-fonts-style mb-4 display-2"><strong>Uko bikora</strong></h6>
-                  <p class="mbr-text mbr-fonts-style display-7">Dukorana n’ibigo by’amashuri mu kugeza ikoranabuhanga ryacu ku banyeshuri ndetse tukagendana nabo mu rugendo rwo kumenya no gukunda gusoma.&nbsp;<br>.</p>
+                  <p class="mbr-text mbr-fonts-style display-7">Dukorana n’ibigo by’amashuri mu kugeza ikoranabuhanga ryacu ku banyeshuri ndetse tukagendana nabo mu rugendo rwo kumenya no gukunda gusoma.&nbsp;<br></p>
                   <div class="mbr-section-btn"><a class="btn btn-danger-outline display-4" href="{{route('partner')}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Ndifuza iri koranabuhanga</a></div>
               </div>
           </div>

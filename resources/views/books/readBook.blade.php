@@ -2,20 +2,20 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Books</title>
 	<meta name="description" content="">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,maximum-scale=2">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui,maximum-scale=1">
 	<meta http-equiv="cleartype" content="on">
+	<link rel="shortcut icon" href="{{asset('master/assets/images/l-276x252.png')}}" type="image/x-icon">
 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('master/wow_book/img/touch/apple-touch-icon-144x144-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('master/wow_book/img/touch/apple-touch-icon-114x114-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('master/wow_book/img/touch/apple-touch-icon-72x72-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" href="{{asset('master/wow_book/img/touch/apple-touch-icon-57x57-precomposed.png')}}">
-	<link rel="shortcut icon" sizes="196x196" href="{{asset('master/wow_book/img/touch/touch-icon-196x196.png')}}">
-	<link rel="shortcut icon" href="{{asset('master/wow_book/img/touch/apple-touch-icon.png')}}">
+
 
 	<!-- Tile icon for Win8 (144x144 + tile color) -->
 	<meta name="msapplication-TileImage" content="{{asset('master/wow_book/img/touch/apple-touch-icon-144x144-precomposed.png')}}">

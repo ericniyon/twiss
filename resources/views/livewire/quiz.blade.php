@@ -133,9 +133,12 @@
               </div>
                  @endforeach
                  
-                 <div wire:loading wire:target="store">
-                  <livewire:loading />
-              </div><button wire:loading.remove wire:target="store" wire:click.prevent="store"  class="btn btn-outline-primary">Igikurikiyeho <i class='fas fa-angle-double-right'></i></button>
+            <div  wire:loading wire:target="store">
+               
+                  <livewire:loading /> 
+              </div>
+             
+              <button wire:loading.remove wire:target="store" wire:click.prevent="store"  class="btn btn-outline-primary">Igikurikiyeho <i class='fas fa-angle-double-right'></i></button>
             </form>
             </div>
           </div>

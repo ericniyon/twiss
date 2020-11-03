@@ -1,4 +1,8 @@
 @extends('layouts.master')
+
+@section('title')
+Book
+@endsection
 @section('styles')
 <!-- for search filed-->
 <style>

@@ -6,11 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo-105x33.png" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('master/assets/images/l-276x252.png')}}" type="image/x-icon">
   <meta name="description" content="">
+  <title>
+  @yield('title')
+  </title> 
   
-  
-  <title>Home</title>
   <link rel="stylesheet" href="{{asset('master/assets/web/assets/mobirise-icons2/mobirise2.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('master/assets/bootstrap/css/bootstrap.min.css')}}">
@@ -114,7 +115,7 @@
                                     Ibitabo</a>
                                     <div class="dropdown-menu">
                                     <a class="text-black dropdown-item display-4"href="{{route('books.allWrittenBooks')}}">
-                                           Ibitabo  by'imyaka yose</a>  
+                                           Ibitabo  by'imyaka byose</a>  
                                         @foreach($levels as $key => $level)
                                         <a class="text-black dropdown-item display-4"href="{{route('books.writtenBooks',$level->id)}}">
                                         Ibitabo byo mu mwaka wa {{$level->name}}</a>  
@@ -131,7 +132,7 @@
                                                     Ibitabo by'amajwi</a>
                                                     <div class="dropdown-menu">
                                                         <a class="text-black dropdown-item display-4"href="{{route('books.allAudioBooks')}}">
-                                                            Ibitabo  by'imyaka yose</a>  
+                                                            Ibitabo  by'imyaka byose</a>  
                                                         @foreach($levels as $key => $level)
                                                         <a class="text-black dropdown-item display-4"href="{{route('books.audioBooks',$level->id)}}">
                                                         Ibyo mu mwaka wa {{$level->name}}</a>  
@@ -167,7 +168,7 @@
         <div class="row mbr-white">
             <div class="col-6 col-lg-3">
                 <div class="media-wrap col-md-8 col-12">
-                    <a href="https://mobiri.se/">
+                    <a href="/">
                         <img src="{{asset('master/assets/images/l-276x252.png')}}" alt="Mobirise">
                     </a>
                 </div>
@@ -177,13 +178,13 @@
                     <strong>Abo turibo</strong>
                 </h5>
                 <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                   <strong>TWIS</strong> ni company y'ikoranabuhanga itanga ibitabo byo gusoma ku banyeshuri bo mu mashuri abanza mu buryo bugezweho kandi mu rurimi rw'ikinyarwanda gusa.</p>
+                   <strong>TWIS</strong> ni kompanyi y'ikoranabuhanga itanga ibitabo byo gusoma ku banyeshuri bo mu mashuri abanza mu buryo bugezweho kandi mu rurimi rw'ikinyarwanda gusa.</p>
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-7">
                     <strong>Dukurikire</strong>
                 </h5>
                 <div class="social-row display-7">
                     <div class="soc-item">
-                        <a href="https://www.facebook.com/twisomere.twis.5  " target="_blank">
+                        <a href="https://web.facebook.com/TWIS-Ltd-103693571509979/?view_public_for=103693571509979  " target="_blank">
                             <span class="mbr-iconfont socicon socicon-facebook"></span>
                         </a>
                     </div>
@@ -193,8 +194,13 @@
                         </a>
                     </div>
                     <div class="soc-item">
-                        <a href="https://www.instagram.com/twisomere2020/" target="_blank">
+                        <a href="https://www.instagram.com/twis_ltd/" target="_blank">
                             <span class="mbr-iconfont socicon socicon-instagram"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.linkedin.com/company/twis-rwanda/?viewAsMember=true" target="_blank">
+                            <span class="mbr-iconfont socicon-linkedin socicon"></span>
                         </a>
                     </div>
                    
@@ -206,6 +212,8 @@
                 </h5>
                 <ul class="list mbr-fonts-style display-4">
                     <li class="mbr-text item-wrap">FAQ</li>
+                <li class="mbr-text item-wrap"> <a class="mbr-text"  href="{{route('home.termsPrivacy')}}">Terms&Privacy policy</a> </li>
+                       
                     <li class="mbr-text item-wrap"><a class="mbr-text" href="#contactUs">Tuvugishe</a></li>
                  
                 </ul>
@@ -215,9 +223,12 @@
                     <strong>Amapage</strong>
                 </h5>
                 <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap"> <a class="mbr-text" href="/partner">Abafatanyabikorwa</a></li>
                     <li class="mbr-text item-wrap"><a class="mbr-text" href="/">Ahabanza</a></li>
-                    
+                <li class="mbr-text item-wrap"> <a class="mbr-text" href="{{route('books.allWrittenBooks')}}">Ibitabo </a></li>
+                    <li class="mbr-text item-wrap"><a class="mbr-text" href="{{route('books.allAudioBooks')}}">Ibitabo by'amajwi</a></li>
+                    <li class="mbr-text item-wrap"><a class="mbr-text" href="/about">Abo turibo</a></li>
+                    <li class="mbr-text item-wrap"> <a class="mbr-text" href="/partner">Abafatanyabikorwa</a></li>
+                   
                 </ul>
             </div>
             
