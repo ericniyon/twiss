@@ -428,7 +428,6 @@ textarea.form-control.is-invalid {
 							<span class="micon dw dw-library"></span><span class="mtext">Quizes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="{{route('quizes.create')}}">Add Quiz</a></li>
 							<li><a href="{{route('quizes.index')}}">All Quizes</a></li>
 						</ul>
 					</li>
@@ -538,40 +537,10 @@ textarea.form-control.is-invalid {
 
 
 
-     
-
-        <script type="text/javascript">
-        $(document).ready(function () {
-            var n = 1;
-
-            $('#addAnswer').click(function () {
-                n++;
-                $('#dynamic_field').append('' +
-                    '<tr id="row' + n + '" class="dynamic-added">' +
-                    '<td>' +
-                    '</td>' +
-                    '<td>' +
-                    '<input type="text" name="options[]" required placeholder="Iveskite atsakyma" class="form-control question_list" />' +
-                    '</td>' +
-                    '<td>' +
-                    '<input type="checkbox" name="correct[]" value="' + n + '" class="form-control question_list" />' +
-                    '</td>' +
-                    '<td>' +
-                    '<button type="button" name="remove" id="' + n + '" class="btn btn-danger btn_remove">X</button>' +
-                    '</td>' +
-                    '</tr>');
-            });
-
-
-            $(document).on('click', '.btn_remove', function () {
-                var button_id = $(this).attr("id");
-                $('#row' + button_id + '').remove();
-            });
-
-        });
-	</script>
-	
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+	 
+	 
+	 @yield('scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script>
 $(document).ready(function() {
     $('.selectQuiz').select2();

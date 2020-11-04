@@ -1,4 +1,18 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
+@section('path')
+<div class="title">
+    <h4>Books</h4>
+</div>
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+
+	<li class="breadcrumb-item active" aria-current="page">Books</li>
+    </ol>
+</nav>
+
+
+@endsection
 
 @section('content')
  		<!-- Simple Datatable start -->
@@ -13,14 +27,15 @@
 								<tr>
                                 
 									<th class="table-plus datatable-nosort">Title</th>
-                                     <th>Created at</th>
-									<th>Author</th>
+                                     
+									
                                    
 									<th>Level</th>
+									<th>Featured</th>
                                     <th>Type</th>
-                                    <th>Category</th>
+                                    
 									<th>Cover</th>
-									<th>Content</th>
+									
 									<th class="datatable-nosort">Action</th>
 								</tr>
 							</thead>
@@ -32,11 +47,16 @@
                               
                                 
 									<td class="table-plus">{{$book->title}}</td>
-                                    <td>{{$book->created_at}}</td>
-                                    <td>{{$book->author}}</td>
+                                    
+                                  
 									<td>{{$book->level->name}}</td>
+									<td>@if($book->feautured)
+										<label class="badge badge-success">Yes</label>
+										@else
+										<label for="" class="badge badge-danger">No</label>
+									@endif</td>
                                     <td>{{$book->book_type->name}}</td>
-                                    <td>{{$book->book_category->name}}</td>
+         
 									
 									<td> <img
                                               src="{{asset('storage/books/covers/'.$book->cover)}}"
@@ -44,7 +64,7 @@
                                             style="width: 100px; height: 150px;"
                                            /> 
                                     </td>
-									<td><a href="{{asset('storage/books/contents/'.$book->content)}}">{{$book->content}} </a></td>
+									
 									<td>
 										<div class="dropdown">
 											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">

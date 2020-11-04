@@ -26,7 +26,7 @@
                           <div class="form-group row">
                  <label class="col-sm-12 col-md-2 col-form-label" for="question_id">Question</label>
                  <div class="col-sm-12 col-md-10">
-                 <select class="js-example-basic-single form-control" style="width:100%" name="question_id" id="question_id">
+                 <select class="selectQuiz form-control" style="width:100%" name="question_id" id="question_id">
                      @foreach((\App\Models\Question::all() ?? [] ) as $question)
                      <option value="{{$question->id}}">
                          {{$question->question_text}}</option>
@@ -53,8 +53,13 @@
 
                  <label class="col-sm-12 col-md-2 col-form-label" for="correct">Correct</label>
                  <div class="col-sm-12 col-md-10">
-                                  <input  class="form-control  @error('correct') is-invalid @enderror  Boolean"  type="text"  name="correct" id="correct" value="{{old('correct')}}"                                   required="required"
-                                  >
+                                 
+
+                                  <select name="correct" id="" class="form-control">
+
+                                    <option value="0" > No</option>
+                                    <option value="1">Yes</option>
+                                  </select>
                                   @if($errors->has('correct'))
                  <p class="text-danger">{{$errors->first('correct')}}</p>
                  @endif

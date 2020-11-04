@@ -21,9 +21,8 @@
 
     <div class="card mb-4">
 
-        <div class="card-header">
-            <h1> Partner Show </h1>
-        </div>
+           <center> <h4> Partner Show </h4> </center>
+        
 
     <div class="card-body">
                                         <div class="form-group">

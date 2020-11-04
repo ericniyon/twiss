@@ -10,8 +10,9 @@
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://twis.test" >Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Question Option</li>
+    <li class="breadcrumb-item"><a href="/" >Home</a></li>
+    <li class="breadcrumb-item"><a href="{{route('question-options.index')}}" >Question options</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{$question_option->id}}</li>
     </ol>
 </nav>
 @endsection
@@ -20,9 +21,8 @@
 
     <div class="card mb-4">
 
-        <div class="card-header">
-            <h1> Question Option Show </h1>
-        </div>
+          <center>  <h4> Question Option Show </h4> </center>
+
 
     <div class="card-body">
                                                         <div class="form-group">

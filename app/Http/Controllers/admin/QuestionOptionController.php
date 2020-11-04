@@ -36,7 +36,7 @@ class QuestionOptionController extends Controller
 
     public function edit(Request $request, QuestionOption $question_option)
     {
-        return view('question_options.edit', compact('question_option'));
+        return view('admin.question_options.edit', compact('question_option'));
     }
 
     public function update(QuestionOptionPostRequest $request, QuestionOption $question_option)

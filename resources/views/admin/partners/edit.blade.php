@@ -8,9 +8,10 @@
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://twis.test">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Partners</a></li>
-    <li class="breadcrumb-item active" aria-current="page">id</li>
+    <li class="breadcrumb-item"><a href="{{ route('partners.show',$partner->id)}}">{{$partner->id}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
     </ol>
 </nav>
 
@@ -32,7 +33,7 @@
 </div>
 @endif
 
-<form method="post" action="{{route('partners.update',['partner'=>$partner->id])}}" >
+<form method="post" action="{{route('partners.update',['partner'=>$partner->id])}}" enctype="multipart/form-data" >
     @csrf
     @method('PUT')
 

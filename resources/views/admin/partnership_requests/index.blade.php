@@ -8,8 +8,8 @@
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://twis.test">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Partnership Request</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Partnership Requests</li>
     </ol>
 </nav>
 
@@ -29,7 +29,7 @@
 @endif
 
 
-<a style="margin-bottom:20px" href="{{route('partnership-requests.create')}}" class="btn btn-success"><i class="icon-copy fa fa-plus" aria-hidden="true"></i>New</a>
+
    <table class="data-table table stripe hover nowrap">
    
     @if(count($partnership_requests))

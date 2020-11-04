@@ -31,7 +31,14 @@
                     <textarea name="textarea" placeholder="Ubutumwa"  wire:model="interest" class="form-control" id="textarea-form5-23"></textarea>
                     @error('interest') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-danger-outline display-4">Ohereza</button></div>
+                <div wire:loading wire:target="submit"  style="margin-left: 330px" class="col-lg-12 col-md-12 col-sm-12 align-center "> 
+                   
+                  <enter>   <livewire:loading /> </center>
+                  
+                
+                </div>
+            
+                <div wire:loading.remove wire:target="submit" class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">  <button type="submit" class="btn btn-danger-outline display-4">Ohereza</button></div>
             </div>
         </form>
     </div>

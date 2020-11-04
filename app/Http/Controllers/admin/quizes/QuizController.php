@@ -43,14 +43,14 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function addQuestion($quizID)
     {
         //$books=Book::all();
 
-        $quizes =Quiz::all();
+        $quiz =Quiz::find($quizID);
       
 
-        return view('admin.quizes.create',['quizes'=>$quizes]);
+        return view('admin.quizes.addQuestion',['quiz'=>$quiz,'quizID'=>$quizID]);
     }
 
     /**
@@ -59,9 +59,71 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addQuestionStore(Request $request)
     {
+     
+        $request->validate([
+
+            'question'=>'required',
+
+            'options'=>'required',
+            'correct'=>'required',
+        ]);
+
+        $quiz=$request->input('quiz');
+        $questionText = $request->input('question');
+        $optionArray = $request->input('options');
+        $correctOptions = $request->input('correct');
+
         
+        $question = new Question();
+
+        
+            $question->quiz_id = $quiz;
+            $question->question_text = $questionText;
+            $question->save();
+
+        $questionToAdd = Question::latest()->first();;
+        $questionID = $questionToAdd->id;
+    
+        foreach ($optionArray as $index => $opt) {
+            $option = new QuestionOption();
+            $option->question_id = $questionID;
+            $option->option = $opt;
+            foreach ($correctOptions as $correctOption) {
+                if($correctOption == $index+1) {
+                    $option->correct = 1;
+                }
+            }
+    
+            $option->save();
+        }
+        $quizName=Quiz::find($quiz)->name;
+        $quizID=Quiz::find($quiz)->id;
+
+        return redirect()->back()->with('toast_success', ' Question created !');
+        
+        
+         
+    
+
+
+
+
+
+        
+        
+       
+
+
+      
+
+      
+
+           
+        
+        
+    
     }
 
     /**
@@ -109,19 +171,6 @@ class QuizController extends Controller
      */
     public function destroy($id)
     {
-       // $questions=Book::find($bookID)->questions;
-
-       // foreach($questions as $question){
-
-      //  $question_options=$question->question_options;  
-      //  foreach($question_options as $option)
-      //  {
-
-      //      $option->delete();
-     //   }
-      //  $question->delete();
-
-     //   }
      
      
      $quiz=Quiz::find($id)->delete();
@@ -139,25 +188,7 @@ class QuizController extends Controller
 
 
 
-    public function destroyCartoonQuiz($cartoonID)
-    {
-        $questions=Cartoon::find($cartoonID)->questions;
-
-        foreach($questions as $question){
-
-        $question_options=$question->question_options;  
-        foreach($question_options as $option)
-        {
-
-            $option->delete();
-        }
-        $question->delete();
-
-        }
-
-
-       return  redirect()->back()->with('success', ' All the quiz questions have deleted !');
-    }
+ 
 
 
 

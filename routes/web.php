@@ -33,6 +33,8 @@ Route::group([ 'prefix' => 'admin','middleware' => ['web']], function ()  {
     Route::resource('books', App\Http\Controllers\admin\books\BookController::class);
     
     Route::resource('quizes', App\Http\Controllers\admin\quizes\QuizController::class);
+    Route::get('/addQuestion/{quizID}', [App\Http\Controllers\admin\quizes\QuizController::class, 'addQuestion'])->name('quizes.addQuestion');
+    Route::post('/addQuestionStore', [App\Http\Controllers\admin\quizes\QuizController::class, 'addQuestionStore'])->name('quizes.addQuestionStore');
     Route::resource('questions', App\Http\Controllers\admin\questions\QuestionController::class);
     //Route::resource('questions', 'Managers\questions\QuestionController');
     Route::resource('cartoons', 'Managers\cartoons\CartoonController');

@@ -4,13 +4,15 @@
 
 @section('path')
 <div class="title">
-    <h4>Partnership Request</h4>
+    <h4>Partnership Request edit</h4>
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
     <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Partnership Requests</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{$partnership_request->id}}</li>
+
+    <li class="breadcrumb-item"><a href="{{ route('partnership-requests.show', $partnership_request->id)}}">{{$partnership_request->id}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">edit</li>
     </ol>
 </nav>
 

@@ -135,7 +135,8 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book=Book::find($id);
+        return view('admin.books.show',['book'=>$book]);
     }
 
     /**
@@ -175,6 +176,7 @@ class BookController extends Controller
             
             
             'description'=>'required',
+            'featured'=>'required'
    
            ]);
            if ($validator->fails()) {
@@ -229,6 +231,7 @@ class BookController extends Controller
            $book->book_type_id=$request->bookType;
            $book->book_category_id=$request->bookCategory;
            $book->cover=$cover;
+           $book->feautured=$request->featured;
            $book->content=$content;
            $book->save();
          

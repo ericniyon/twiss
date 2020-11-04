@@ -1,4 +1,19 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
+@section('path')
+<div class="title">
+    <h4>Edit book</h4>
+</div>
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+	<li class="breadcrumb-item"><a href="{{ url()->previous() }}">Books</a></li>
+	<li class="breadcrumb-item"><a href="#">Edit</a></li>
+	<li class="breadcrumb-item active" aria-current="page">{{$book->id}}</li>
+    </ol>
+</nav>
+
+
+@endsection
 
 @section('content')
 
@@ -71,6 +86,31 @@
                                     </select>
 							</div>
 						</div>
+
+
+
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Featured</label>
+							<div class="col-sm-12 col-md-10">
+								<select name="featured" class="custom-select col-12">
+
+									@if($book->feautured)
+
+								<option value="1" selected>Yes</option>
+								<option value="0">NO</option>
+								@else
+								<option value="0" selected>NO</option>
+								<option value="1">Yes</option>
+									
+									@endif
+
+								
+								 
+                                    </select>
+							</div>
+						</div>
+
+
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Category</label>
 							<div class="col-sm-12 col-md-10">

@@ -4,13 +4,14 @@
 
 @section('path')
 <div class="title">
-    <h4>Question</h4>
+    <h4>Edit question</h4>
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="http://twis.test">Home</a></li>
     <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Questions</a></li>
-    <li class="breadcrumb-item active" aria-current="page">id</li>
+    <li class="breadcrumb-item"><a href="{{ route('questions.show',$question->id) }}">{{$question->id}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
     </ol>
 </nav>
 

@@ -6,12 +6,15 @@
 
 @section('path')
 <div class="title">
-    <h4>Question create</h4>
+    <h4>Question show</h4>
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://twis.test" >Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Question</li>
+    <li class="breadcrumb-item"><a href="/admin" >Home</a></li>
+    <li class="breadcrumb-item"><a href="{{route('questions.index')}}" >Questions</a></li>
+   
+   
+        <li class="breadcrumb-item active" aria-current="page">{{$question->id}}</li>
     </ol>
 </nav>
 @endsection
@@ -20,13 +23,14 @@
 
     <div class="card mb-4">
 
-        <div class="card-header">
-            <h4> Question Show </h4>
-        </div>
+         <center>   <h4> Question Show </h4> </center>
+        
 
     <div class="card-body">
-                                        <div class="form-group">
-            <label class="col-form-label" for="value">Question Text</label>
+              
+        
+        <div class="form-group">
+            <label class="col-form-label" for="value">Question Text:</label>
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{$question->question_text}}">
         </div>
                                                                     </div>
@@ -35,24 +39,34 @@
 
     <div class="card mb-4">
 
-                        <div class="card-header">
-        <h4>Question Options</h4>
-        </div>
+                    
+        <center><h4>Question Options</h4></center>
+        
         <div class="card-body">
-            <div>
-                <a href="{{route('question-options.create')}}">New</a>
-            </div>
+            
 
             <table class="table">
                 <thead>
                     <tr>
-                        <th>&nbsp;</th>
+                       
+                        <th>Option</th>
+                        <th>Corect</th>
                                                                                                                                                                         <th> Option</th>
                                                                                                                                                                                                                     </tr>
                 </thead>
                 <tbody>
                     @foreach($question->question_options as $questionOption)
                     <tr>
+                        <td> {{ $questionOption->option}}</td>
+                        <td>@if($questionOption->correct)
+
+                            <label for="" class="badge-success badge"> Yes</label>
+
+                            @else
+                            <label for="" class="badge-danger badge"> No</label>
+                            
+                        @endif
+                    </td>
                         <td>
                         <a href="{{route('question-options.show',$questionOption->id )}}">Show</a>
                         <a href="{{route('question-options.edit',$questionOption->id )}}">Edit</a>
@@ -65,7 +79,7 @@
                             @method('DELETE')
                         </form>
                         </td>
-                                                                                                                                                                        <td> {{ $questionOption->option}}</td>
+                                                                                                                                                                       
                                                                                                                                                                                                                     </tr>
 
                     @endforeach

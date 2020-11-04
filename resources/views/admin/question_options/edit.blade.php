@@ -42,7 +42,7 @@
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label" for="question_id">Question</label>
         <div class="col-sm-12 col-md-10">
-        <select class="js-example-basic-single form-control" style="width:100%" name="question_id" id="question_id">
+        <select class="selectQuiz form-control" style="width:100%" name="question_id" id="question_id">
             @foreach((\App\Models\Question::all() ?? [] ) as $question)
             <option value="{{$question->id}}"
                 @if($question_option->question_id == old('question_id', $question->id))
@@ -70,9 +70,18 @@
                 <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label" for="correct">Correct</label>
         <div class="col-sm-12 col-md-10">
-                <input class="form-control Boolean"  type="text"  name="correct" id="correct" value="{{old('correct',$question_option->correct)}}"
-                        required="required"
-                >
+            <select name="correct" id="" class="form-control">
+
+                @if($question_option->correct)
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+                   @else
+                <option value="0" selected>No</option>
+                <option value="1">Yes</option>
+                    
+                @endif
+            </select>
+               
             @if($errors->has('correct'))
         <span class="invalid-feedback" role="alert"><strong>{{$errors->first('correct')}}</strong></span>
         @endif

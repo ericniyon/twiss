@@ -1,8 +1,23 @@
+
 @extends('layouts.admin')
 
 @section('content')
 
+@section('path')
+<div class="title">
+    <h4>Show quiz</h4>
+</div>
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{route('quizes.index')}}">Quizes</a></li>
+    <li class="breadcrumb-item"><a href="{{route('quizes.show',$quiz->id)}}">{{$quiz->id}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add question</li>
+    </ol>
+</nav>
 
+
+@endsection
 
 
 
@@ -10,14 +25,14 @@
 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
 
 	<div class="pd-20">
-		<h4 class="text-blue h4">Add question to quiz(book or cartoon)</h4>
+    <h4 class="text-blue h4">Your are adding question to {{$quiz->name}} .</h4>
 						
 	</div>
 			
 
  <div class="form-group">
                 <hr>
-                <form action="{{route('questions.store')}}" method="post">
+                <form action="{{route('quizes.addQuestionStore')}}" method="post">
                     @csrf
                     <div class="table-responsive">
                        
@@ -39,22 +54,9 @@
 
 
                               @else
-                                <label for="">Select Book name (cartoon or book)</label>
-                                <select name="quiz" id="inputState" class="form-control">
-                                     <option  value="" selected>Quiz.....</option> 
-                                     
-                                    @foreach ($quizes as $quiz)
 
-                                  
-                                        <option  value="{{$quiz->id}}">{{$quiz->name}}</option> 
-
-                                 
-
-                                    @endforeach
-                                       
-                                   
-                                </select>
-
+                        <input type="hidden" name="quiz" value="{{$quizID}}">
+                               
 
 
                                
@@ -97,4 +99,37 @@
 </div>
 
  
+@endsection
+@section('scripts')
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var n = 0;
+
+        $('#addAnswer').click(function () {
+            n++;
+            $('#dynamic_field').append('' +
+                '<tr id="row' + n + '" class="dynamic-added">' +
+                '<td>' +
+                '</td>' +
+                '<td>' +
+                '<input type="text" name="options[]" required placeholder="Type option here" class="form-control question_list" />' +
+                '</td>' +
+                '<td>' +
+                '<input type="checkbox" name="correct[]" value="' + n + '" class="form-control question_list" />' +
+                '</td>' +
+                '<td>' +
+                '<button type="button" name="remove" id="' + n + '" class="btn btn-danger btn_remove">X</button>' +
+                '</td>' +
+                '</tr>');
+        });
+
+
+        $(document).on('click', '.btn_remove', function () {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+
+    });
+</script>
 @endsection

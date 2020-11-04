@@ -31,7 +31,7 @@ About us
               <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Abakozi</strong></h3>
               
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
               <div class="card-wrap">
                   <div class="image-wrap">
                       <img src="{{asset('master/assets/images/imageedit-1-3628526416-576x384.jpeg')}}" alt="">
@@ -60,7 +60,7 @@ About us
               </div>
           </div>
 
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
               <div class="card-wrap">
                   <div class="image-wrap">
                       <img src="{{asset('master/assets/images/imageonline-co-blackandwhiteimage-1-576x407.png')}}" alt="">
@@ -89,7 +89,7 @@ About us
               </div>
           </div>
 
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
               <div class="card-wrap">
                   <div class="image-wrap">
                       <img src="{{asset('master/assets/images/whatsapp-image-2020-10-08-at-23.25.14-576x864.jpeg')}}" alt="">
@@ -118,10 +118,10 @@ About us
               </div>
           </div>
 
-          <div class="col-sm-6 col-lg-3">
+        <!--  <div class="col-sm-6 col-lg-3">
               <div class="card-wrap">
                   <div class="image-wrap">
-                      <img src="{{asset('master/assets/images/whatsapp-image-2020-10-09-at-12.39.26-416x626.jpeg')}}" alt="">
+                      <img src="{{asset('master/assets/images/whatsapp-image-2020-10-09-at-12.39.26-416x62.jpeg')}}" alt="">
                   </div>
                   <div class="content-wrap">
                       <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Prince Niyonshuti</strong></h5>
@@ -145,7 +145,7 @@ About us
                       
                   </div>
               </div>
-          </div>
+          </div>-->
       </div>
   </div>
 </section>

@@ -4,12 +4,12 @@
 
 @section('path')
 <div class="title">
-    <h4>Question Option</h4>
+    <h4>Question Options</h4>
 </div>
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Question Option</li>
+        <li class="breadcrumb-item active" aria-current="page"> Question Options</li>
     </ol>
 </nav>
 
@@ -29,7 +29,7 @@
 @endif
 
 
-<a style="margin-bottom:20px" href="{{route('question-options.create')}}" class="btn btn-success"><i class="icon-copy fa fa-plus" aria-hidden="true"></i>New</a>
+
    <table class="data-table table stripe hover nowrap">
    
     @if(count($question_options))

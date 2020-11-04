@@ -53,63 +53,11 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionOptionPostRequest $request)
     {
-     
-        $quiz=$request->input('quiz');
-        $questionText = $request->input('question');
-        $optionArray = $request->input('options');
-        $correctOptions = $request->input('correct');
-
-        
-        $question = new Question();
-
-        
-            $question->quiz_id = $quiz;
-            $question->question_text = $questionText;
-            $question->save();
-
-        $questionToAdd = Question::latest()->first();;
-        $questionID = $questionToAdd->id;
-    
-        foreach ($optionArray as $index => $opt) {
-            $option = new QuestionOption();
-            $option->question_id = $questionID;
-            $option->option = $opt;
-            foreach ($correctOptions as $correctOption) {
-                if($correctOption == $index+1) {
-                    $option->correct = 1;
-                }
-            }
-    
-            $option->save();
-        }
-        $quizName=Quiz::find($quiz)->name;
-        $quizID=Quiz::find($quiz)->id;
-
-        return redirect()->back()->with('toast_success', ' Question created !')
-        ->with('quizName',$quizName ) 
-        ->with('quizID', $quizID )
-         ;
-    
-
-
-
-
-
-        
-        
-       
-
-
-      
-
-      
-
-           
-        
-        
-    
+        $data = $request->validated();
+        $question_option = QuestionOption::create($data);
+        return redirect()->route('question-options.index')->with('status', 'QuestionOption created!');
     }
 
     /**
@@ -149,8 +97,9 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Question $question)
     {
-        //
+        $question->delete();
+        return redirect()->route('questions.index')->with('status', 'Question destroyed!');
     }
 }

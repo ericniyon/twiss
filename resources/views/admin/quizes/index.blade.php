@@ -1,4 +1,19 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
+
+@section('path')
+<div class="title">
+    <h4>Quizes</h4>
+</div>
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Quizes</li>
+       
+    </ol>
+</nav>
+
+
+@endsection
 
 @section('content')
  		<!-- Simple Datatable start -->
@@ -42,8 +57,8 @@
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 												<a class="dropdown-item" href="{{route('quizes.show',$quiz->id)}}"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-
+												
+                                                <a class="dropdown-item" href="{{route('quizes.addQuestion',$quiz->id)}}"><i class="dw dw-eye"></i> Add question</a>
 
                                                 <form action="{{route('quizes.destroy',$quiz->id)}}" method="post">
                                                          @csrf

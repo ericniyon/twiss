@@ -1,5 +1,17 @@
 @extends('layouts.admin')
 
+@section('path')
+<div class="title">
+    <h4>Partnership Request edit</h4>
+</div>
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+@endsection
+
 @section('content')
 
 <div class="card-box pd-20 height-100-p mb-30">
