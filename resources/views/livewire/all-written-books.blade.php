@@ -48,7 +48,7 @@
                    
                         <p style="margin-top:150px"><center>
                           @if ($book->book_type->name=="Written")
-                          <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Soma igitabo</a>
+                          <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>{{ __('app.Somaigitabo') }}</a>
                          @else
                          <a class="btn btn-danger display-4" href="{{route('book.listenBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Umva igitabo</a>
                           @endif

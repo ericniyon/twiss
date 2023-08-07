@@ -76,4 +76,7 @@ Route::get('/start/{bookID}', [App\Http\Controllers\Quizes\QuizController::class
     
     
     
-});  
+});
+
+
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LangController@switchLang']);

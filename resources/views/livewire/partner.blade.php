@@ -38,7 +38,7 @@
                 
                 </div>
             
-                <div wire:loading.remove wire:target="submit" class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">  <button type="submit" class="btn btn-danger-outline display-4">Ohereza</button></div>
+                <div wire:loading.remove wire:target="submit" class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">  <button type="submit" class="btn btn-danger-outline display-4">{{ __('app.Send') }}</button></div>
             </div>
         </form>
     </div>

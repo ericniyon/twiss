@@ -1,7 +1,7 @@
 <div>
     <div class="container">
         <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ibitabo bikunzwe</strong></h4>
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>{{ __('app.Popularbooks') }}</strong></h4>
             
         </div>
         <div class="row mt-4">
@@ -21,7 +21,7 @@
                       </p>
                         <p style="margin-top:120px"><center>
                           @if ($book->book_type->name=="Written")
-                          <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Soma igitabo</a>
+                          <a class="btn btn-danger display-4" href="{{route('book.readBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>{{ __('app.Somaigitabo') }}</a>
                          @else
                          <a class="btn btn-danger display-4" href="{{route('book.listenBook',$book->id)}}"><span class="mobi-mbri mobi-mbri-right mbr-iconfont mbr-iconfont-btn"></span>Umva igitabo</a>
                           @endif
@@ -32,13 +32,7 @@
             </div>
         </div>
   
-   @endforeach
-  
-         
-       
-          
-          
-         
+   @endforeach       
         </div>
       
     </div>

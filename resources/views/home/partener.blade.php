@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-Partner
+{{ __('app.Partners') }}
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@ Partner
   <div class="mbr-overlay"></div>
   <div class="container">
       <div class="mbr-section-head">
-          <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Ba umufatanyabikorwa!</strong></h3>
+          <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>{{ __('app.Partnerwithus') }}!</strong></h3>
           
       </div>
       <div class="row justify-content-center mt-4">
@@ -29,7 +29,7 @@ Partner
   <div class="images-container container">
       <div class="mbr-section-head">
           <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Abamaze kutwizera</strong></h3>
+              <strong>{{ __('app.Theytrust') }}</strong></h3>
           
           
       </div>
